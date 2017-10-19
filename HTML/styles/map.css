@@ -1,0 +1,14 @@
+.rightShift {
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    z-index: 1;
+}
+
+.plusIcon{
+   background:url(../src/plus_button.png);
+   width:48px;
+   height:48px;
+   display: block;
+   right: 1%;
+}
