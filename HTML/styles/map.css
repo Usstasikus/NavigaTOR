@@ -3,12 +3,16 @@
     top: 30%;
     right: 1%;
     z-index: 1;
+    width: 20%
 }
 
-.plusIcon{
+.plusButton{
    background:url(../src/plus_button.png);
    width:48px;
    height:48px;
    display: block;
    right: 1%;
+}
+.plusButton:hover{
+   background:url(../src/plus_button_hover.png);
 }

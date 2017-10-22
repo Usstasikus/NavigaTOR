@@ -1,0 +1,8 @@
+.list-group{
+  overflow-y: scroll;
+  max-height: 300px;
+}
+
+.list-group-item:hover{
+  background: #d9dad9;
+}
