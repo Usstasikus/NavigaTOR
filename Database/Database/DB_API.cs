@@ -1,8 +1,8 @@
 ﻿#define DEBUG
+#undef DEBUG
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +17,7 @@ namespace Database
         /// Register new user
         /// </summary>
         /// <param name="user">User to register</param>
-        public static void RegisterUser(User user)
+        public static User RegisterUser(User user)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -27,11 +27,12 @@ namespace Database
                     throw new ArgumentException("Login is occupied. Choose another one!");
 
                 // Add user
-                db.Users.Add(user);
+                user = db.Users.Add(user).Entity;
 
                 // Save changes
                 db.SaveChanges();
             }
+            return user;
         }
 
         /// <summary>
@@ -40,15 +41,64 @@ namespace Database
         /// <param name="user">User to delete</param>
         public static void RemoveUser(User user)
         {
+            // Remove by login
+            RemoveUser(user.Id);
+        }
+
+        /// <summary>
+        /// Remove user from db by id
+        /// </summary>
+        /// <param name="userId">Id of user to delete</param>
+        public static void RemoveUser(int userId)
+        {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
-                User userToDelete = db.Users.Find(user.Id);
+                User userToDelete = db.Users.Find(userId);
 
                 // If user exists...
-                if (userToDelete != null)                
+                if (userToDelete != null)
                     db.Users.Remove(userToDelete); // Delete user
-                
+
+                // Save changes
+                db.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// Remove user from db by login
+        /// </summary>
+        /// <param name="userLogin">Login of user to delete</param>
+        public static void RemoveUser(string userLogin)
+        {
+            // Connecting the database
+            using (navigatordbContext db = new navigatordbContext())
+            {
+                User userToDelete = db.Users.ToList().Find(u => u.Login == userLogin);
+
+                // If user exists...
+                if (userToDelete == null)
+                    return;
+
+                // Delete all user connections to places
+                foreach (UserPlace item in db.UserPlaces.ToList())
+                {
+                    if (item.UserId == userToDelete.Id)
+                        db.UserPlaces.Remove(item);
+                }
+
+                // Delete all user connections to routes
+                foreach (Route item in db.Routes.ToList())
+                {
+                    if (item.UserId == userToDelete.Id)
+                    {
+                        item.UserId = 0;
+                        db.Routes.Update(item);
+                    }
+                }
+
+                db.Users.Remove(userToDelete); // Delete user
+
                 // Save changes
                 db.SaveChanges();
             }
@@ -79,7 +129,7 @@ namespace Database
         /// <param name="surname">User's surname</param>
         /// <param name="age">User's age</param>
         /// <param name="tags">User's favorite tags</param>
-        public static void UpdateUser(this User user, string login = null, string password = null,
+        public static User UpdateUser(this User user, string login = null, string password = null,
                                                       string name = null, string surname = null,
                                                       int? age = null, string tags = null)
         {
@@ -106,10 +156,11 @@ namespace Database
                     user.Tags = tags;
 
                 // Update user
-                db.Users.Update(user);
+                user = db.Users.Update(user).Entity;
                 // Save changes
                 db.SaveChanges();
             }
+            return user;
         }
 
         /// <summary>
@@ -134,14 +185,20 @@ namespace Database
         /// </summary>
         /// <param name="user">User to update</param>
         /// <param name="place">Place to add</param>
-        public static void AddPlace(this User user, Place place)
+        public static Place AddPlace(this User user, Place place)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
-                db.UserPlaces.Add(new UserPlaces() { UserId = user.Id, PlaceId = place.Id });
+                if (place.Id == 0)
+                    throw new ArgumentException("Place doesn't exist in database! Add it to database before adding to user.");               
+
+                if (!db.UserPlaces.ToList().Any(up => up.PlaceId == place.Id && up.UserId == user.Id))
+                    db.UserPlaces.Add(new UserPlace() { UserId = user.Id, PlaceId = place.Id });
+
                 db.SaveChanges();
             }
+            return place;
         }
 
         /// <summary>
@@ -178,6 +235,27 @@ namespace Database
             {
                 // Search for user with given ID
                 User user = db.Users.Find(id);
+#if DEBUG
+                // If no user found...
+                if (user == null)
+                    throw new KeyNotFoundException("There is no such user in database!");
+#endif
+                return user;
+            }
+        }
+
+        /// <summary>
+        /// Get information about user by Login
+        /// </summary>
+        /// <param name="login">Login of user</param>
+        /// <returns>Entity of user</returns>
+        public static User GetUser(string login)
+        {
+            // Connecting the database
+            using (navigatordbContext db = new navigatordbContext())
+            {
+                // Search for user with given Login
+                User user = db.Users.ToList().Find(u => u.Login == login);
 #if DEBUG
                 // If no user found...
                 if (user == null)
@@ -234,7 +312,7 @@ namespace Database
         /// </summary>
         /// <param name="tags">Tags to search</param>
         /// <returns>Collection of <see cref="Place"/> with given tags</returns>
-        public static ICollection<Place> GetPlaces(string tags)
+        public static List<Place> GetPlaces(string tags)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -242,10 +320,10 @@ namespace Database
                 // Get array of tags
                 string[] tagsArr = tags.Split(' ');
                 // Get list of places
-                ICollection<Place> placesList = db.Places.ToList();
+                List<Place> placesList = db.Places.ToList();
 
                 // Select places with given tags from list of all places
-                ICollection<Place> places = (from place in placesList
+                List<Place> places = (from place in placesList
                                              where place.Tags.Split(' ').Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
                                              select place).ToList();
 #if DEBUG
@@ -263,18 +341,18 @@ namespace Database
         /// </summary>
         /// <param name="user">User to analize</param>
         /// <returns>Collection of <see cref="Place"/> of user</returns>
-        public static ICollection<Place> GetPlaces(this User user)
+        public static List<Place> GetPlaces(this User user)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
                 // Get list of connections
-                ICollection<UserPlaces> connections = db.UserPlaces.ToList();
+                List<UserPlace> connections = db.UserPlaces.ToList();
 
                 // Select list of places from user's favorite places
-                ICollection<Place> places = (from userPlace in connections
-                                             where userPlace.User == user
-                                             select userPlace.Place).ToList();
+                List<Place> places = (from userPlace in connections
+                                             where userPlace.UserId == user.Id
+                                             select db.Places.Find(userPlace.PlaceId)).ToList();
 #if DEBUG
                 if (!places.Any())
                     throw new ArgumentException("There are no places of this user!");
@@ -289,7 +367,7 @@ namespace Database
         /// </summary>
         /// <param name="userId">ID of user to analize</param>
         /// <returns>Collection of <see cref="Place"/> of user</returns>
-        public static ICollection<Place> GetUserPlaces(int userId)
+        public static List<Place> GetUserPlaces(int userId)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -297,10 +375,10 @@ namespace Database
                 // Get user by id
                 User user = db.Users.Find(userId);
                 // Get list of connections
-                ICollection<UserPlaces> connections = db.UserPlaces.ToList();
+                List<UserPlace> connections = db.UserPlaces.ToList();
 
                 // Select list of places from user's favorite places
-                ICollection<Place> places = (from userPlace in connections
+                List<Place> places = (from userPlace in connections
                                              where userPlace.User == user
                                              select userPlace.Place).ToList();
 #if DEBUG
@@ -317,7 +395,7 @@ namespace Database
         /// </summary>
         /// <param name="routeId">Route to analize</param>
         /// <returns>Collection of <see cref="Place"/> of route</returns>
-        public static ICollection<Place> GetPlaces(this Route route)
+        public static List<Place> GetPlaces(this Route route)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -326,7 +404,7 @@ namespace Database
                 ICollection<RoutePlaces> connections = db.RoutePlaces.ToList();
 
                 // Select list of places from route's places
-                ICollection<Place> places = (from routePlace in connections
+                List<Place> places = (from routePlace in connections
                                              where routePlace.Route == route
                                              select routePlace.Place).ToList();
 #if DEBUG
@@ -343,7 +421,7 @@ namespace Database
         /// </summary>
         /// <param name="routeId">Route to analize</param>
         /// <returns>Collection of <see cref="Place"/> of route</returns>
-        public static ICollection<Place> GetRoutePlaces(int routeId)
+        public static List<Place> GetRoutePlaces(int routeId)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -354,7 +432,7 @@ namespace Database
                 ICollection<RoutePlaces> connections = db.RoutePlaces.ToList();
 
                 // Select list of places from route's places
-                ICollection<Place> places = (from routePlace in connections
+                List<Place> places = (from routePlace in connections
                                              where routePlace.Route == route
                                              select routePlace.Place).ToList();
 #if DEBUG
@@ -371,7 +449,7 @@ namespace Database
         /// </summary>
         /// <param name="tags">Tags to search</param>
         /// <returns>Collection of <see cref="Route"/> with given tags</returns>
-        public static ICollection<Route> GetRoutes(string tags)
+        public static List<Route> GetRoutes(string tags)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -379,10 +457,10 @@ namespace Database
                 // Get array of tags
                 string[] tagsArr = tags.Split(' ');
                 // Get list of routes
-                ICollection<Route> routesList = db.Routes.ToList();
+                List<Route> routesList = db.Routes.ToList();
 
                 // Select routes with given tags from list of all places
-                ICollection<Route> routes = (from route in routesList
+                List<Route> routes = (from route in routesList
                                              where route.Tags.Split(' ').Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
                                              select route).ToList();
 #if DEBUG
@@ -399,7 +477,7 @@ namespace Database
         /// </summary>
         /// <param name="user"></param>
         /// <returns>Collection of <see cref="Route"/> of user</returns>
-        public static ICollection<Route> GetRoutes(this User user)
+        public static List<Route> GetRoutes(this User user)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -408,7 +486,7 @@ namespace Database
                 ICollection<Route> userRoutes = user.Routes;
 
                 // Select list of routes by user
-                ICollection<Route> routes = (from route in userRoutes
+                List<Route> routes = (from route in userRoutes
                                              where route.User == user
                                              select route).ToList();
 #if DEBUG
@@ -425,7 +503,7 @@ namespace Database
         /// </summary>
         /// <param name="userId"></param>
         /// <returns>Collection of <see cref="Route"/> of user</returns>
-        public static ICollection<Route> GetUserRoutes(int userId)
+        public static List<Route> GetUserRoutes(int userId)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -436,7 +514,7 @@ namespace Database
                 ICollection<Route> userRoutes = user.Routes;
 
                 // Select list of routes by user
-                ICollection<Route> routes = (from route in userRoutes
+                List<Route> routes = (from route in userRoutes
                                              where route.User == user
                                              select route).ToList();
 #if DEBUG
@@ -453,16 +531,16 @@ namespace Database
         /// </summary>
         /// <param name="place">Place to analize</param>
         /// <returns>Collection of <see cref="Route"/> that contain given place</returns>
-        public static ICollection<Route> GetRoutes(this Place place)
+        public static List<Route> GetRoutes(this Place place)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
                 // Get list of routes
-                ICollection<Route> routesList = db.Routes.ToList();
+                List<Route> routesList = db.Routes.ToList();
 
                 // Select list of routes by place
-                ICollection<Route> routes = (from route in routesList
+                List<Route> routes = (from route in routesList
                                              from routePlace in route.RoutePlaces
                                              where routePlace.Place == place
                                              select route).ToList();
@@ -480,7 +558,7 @@ namespace Database
         /// </summary>
         /// <param name="placeId">ID of place to analize</param>
         /// <returns>Collection of <see cref="Route"/> that contain given place (by id)</returns>
-        public static ICollection<Route> GetPlaceRoutes(int placeId)
+        public static List<Route> GetPlaceRoutes(int placeId)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
@@ -488,10 +566,10 @@ namespace Database
                 // Get place by place ID
                 Place place = db.Places.Find(placeId);
                 // Get list of routes
-                ICollection<Route> routesList = db.Routes.ToList();
+                List<Route> routesList = db.Routes.ToList();
 
                 // Select list of routes by place 
-                ICollection<Route> routes = (from route in routesList
+                List<Route> routes = (from route in routesList
                                              from routePlace in route.RoutePlaces
                                              where routePlace.Place == place
                                              select route).ToList();
@@ -509,16 +587,16 @@ namespace Database
         /// </summary>
         /// <param name="places">Places to analize</param>
         /// <returns>Collection of <see cref="Route"/> that contain given place</returns>
-        public static ICollection<Route> GetPlacesRoutes(params Place[] places)
+        public static List<Route> GetPlacesRoutes(params Place[] places)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
                 // Get list of routes
-                ICollection<Route> routesList = db.Routes.ToList();
+                List<Route> routesList = db.Routes.ToList();
 
                 // Select list of routes that contain places
-                ICollection<Route> routes = (from route in routesList
+                List<Route> routes = (from route in routesList
                                              where route.RoutePlaces.Count(routePlace => places.Contains(routePlace.Place)) >= places.Length // We could have route where one place occurs twice, that's why it is >= (not ==)
                                              select route).ToList();
 #if DEBUG
@@ -534,17 +612,18 @@ namespace Database
         /// Add place to database
         /// </summary>
         /// <param name="place">Place to add</param>
-        public static void AddPlace(Place place)
+        public static Place AddPlace(Place place)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
-                if (db.Places.Find(place) != null)
+                if (!db.Places.ToList().Any(pl => pl.Id == place.Id))
                     // Add place to database
-                    db.Places.Add(place);
+                    place = db.Places.Add(place).Entity;
 
                 db.SaveChanges();
             }
+            return place;
         }
 
         /// <summary>
@@ -556,12 +635,16 @@ namespace Database
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
-                
-                //Place placeToDelete = db.Places.Find(place.Id);
+                if (place == null)
+                    return;
 
-                if (place != null)
-                    // Remove place from database
-                    db.Places.Remove(place);
+                // If there are some connections to users or routes
+                if (db.UserPlaces.ToList().Any(up => up.PlaceId == place.Id)
+                    || db.RoutePlaces.ToList().Any(rp => rp.PlaceId == place.Id))
+                    throw new ArgumentException("Place can't be deleted! It is in some routes or user's lists.");
+
+                // Remove place from database
+                db.Places.Remove(place);
 
                 db.SaveChanges();
             }
@@ -578,6 +661,15 @@ namespace Database
             {
                 // Get place from database
                 Place place = db.Places.Find(placeId);
+
+                if (place == null)
+                    return;
+
+                // If there are some connections to users or routes
+                if (db.UserPlaces.ToList().Any(up => up.PlaceId == place.Id)
+                    || db.RoutePlaces.ToList().Any(rp => rp.PlaceId == place.Id))
+                    throw new ArgumentException("Place can't be deleted! It is in some routes or user's lists.");
+
                 // Remove place from database
                 db.Places.Remove(place);
 
@@ -589,16 +681,17 @@ namespace Database
         /// Add route to database
         /// </summary>
         /// <param name="route">Route to add</param>
-        public static void AddRoute(Route route)
+        public static Route AddRoute(Route route)
         {
             // Connecting the database
             using (navigatordbContext db = new navigatordbContext())
             {
                 // Add route to database
-                db.Routes.Add(route);
+                route = db.Routes.Add(route).Entity;
 
                 db.SaveChanges();
             }
+            return route;
         }
 
         /// <summary>

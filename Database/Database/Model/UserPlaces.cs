@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Database
 {
-    public partial class UserPlaces
+    public partial class UserPlace
     {
         public int UserId { get; set; }
         public int PlaceId { get; set; }

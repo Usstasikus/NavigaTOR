@@ -4,3 +4,6 @@ C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\У
 C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.csproj.CoreCompileInputs.cache
 C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.AssemblyInfoInputs.cache
 C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.AssemblyInfo.cs
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.pdb
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.pdb

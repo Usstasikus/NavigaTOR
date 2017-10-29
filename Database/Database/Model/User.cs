@@ -10,9 +10,9 @@ namespace Database
         public User()
         {
             Routes = new HashSet<Route>();
-            UserPlaces = new HashSet<UserPlaces>();
+            UserPlaces = new HashSet<UserPlace>();
         }
-
+        
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -22,6 +22,6 @@ namespace Database
         public string Tags { get; set; }
 
         public ICollection<Route> Routes { get; set; }
-        public ICollection<UserPlaces> UserPlaces { get; set; }
+        public ICollection<UserPlace> UserPlaces { get; set; }
     }
 }

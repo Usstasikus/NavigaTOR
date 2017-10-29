@@ -13,7 +13,7 @@ namespace Database
         public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<RoutePlaces> RoutePlaces { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
-        public virtual DbSet<UserPlaces> UserPlaces { get; set; }
+        public virtual DbSet<UserPlace> UserPlaces { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -89,7 +89,7 @@ namespace Database
                     .HasConstraintName("FK_Routes_Users");
             });
 
-            modelBuilder.Entity<UserPlaces>(entity =>
+            modelBuilder.Entity<UserPlace>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.PlaceId });
 
