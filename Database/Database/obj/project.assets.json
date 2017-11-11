@@ -5111,11 +5111,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucky13\\OneDrive - НИУ Высшая школа экономики\\Учеба\\2 курс\\NavigaTOP\\NavigaTOR\\Database\\Database\\Database.csproj",
+      "projectUniqueName": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\Database\\Database.csproj",
       "projectName": "Database",
-      "projectPath": "C:\\Users\\Lucky13\\OneDrive - НИУ Высшая школа экономики\\Учеба\\2 курс\\NavigaTOP\\NavigaTOR\\Database\\Database\\Database.csproj",
+      "projectPath": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\Database\\Database.csproj",
       "packagesPath": "C:\\Users\\Lucky13\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucky13\\OneDrive - НИУ Высшая школа экономики\\Учеба\\2 курс\\NavigaTOP\\NavigaTOR\\Database\\Database\\obj\\",
+      "outputPath": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

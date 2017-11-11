@@ -8,7 +8,7 @@ namespace Database
         public Place()
         {
             Feedbacks = new HashSet<Feedback>();
-            RoutePlaces = new HashSet<RoutePlaces>();
+            RoutePlaces = new HashSet<RoutePlace>();
             UserPlaces = new HashSet<UserPlace>();
         }
 
@@ -24,7 +24,7 @@ namespace Database
         public string Limitations { get; set; }
 
         public ICollection<Feedback> Feedbacks { get; set; }
-        public ICollection<RoutePlaces> RoutePlaces { get; set; }
+        public ICollection<RoutePlace> RoutePlaces { get; set; }
         public ICollection<UserPlace> UserPlaces { get; set; }
     }
 }

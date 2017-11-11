@@ -11,7 +11,7 @@ namespace Database
         public static IConfigurationRoot Configuration { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Place> Places { get; set; }
-        public virtual DbSet<RoutePlaces> RoutePlaces { get; set; }
+        public virtual DbSet<RoutePlace> RoutePlaces { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<UserPlace> UserPlaces { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -57,7 +57,7 @@ namespace Database
                 entity.Property(e => e.Title).IsRequired();
             });
 
-            modelBuilder.Entity<RoutePlaces>(entity =>
+            modelBuilder.Entity<RoutePlace>(entity =>
             {
                 entity.HasKey(e => new { e.RouteId, e.PlaceId });
 
