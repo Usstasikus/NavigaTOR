@@ -1,0 +1,8 @@
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\b\Database\Debug\netcoreapp2.0\Database.deps.json
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\b\Database\Debug\netcoreapp2.0\Database.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\b\Database\Debug\netcoreapp2.0\Database.pdb
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\i\Database\Debug\netcoreapp2.0\Database.csproj.CoreCompileInputs.cache
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\i\Database\Debug\netcoreapp2.0\Database.AssemblyInfoInputs.cache
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\i\Database\Debug\netcoreapp2.0\Database.AssemblyInfo.cs
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\i\Database\Debug\netcoreapp2.0\Database.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\.vs\Database\lut\0\i\Database\Debug\netcoreapp2.0\Database.pdb

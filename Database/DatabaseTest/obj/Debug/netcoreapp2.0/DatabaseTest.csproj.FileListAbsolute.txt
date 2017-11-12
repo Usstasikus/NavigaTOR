@@ -1,0 +1,32 @@
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.deps.json
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.runtimeconfig.json
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.runtimeconfig.dev.json
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.pdb
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Database.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Database.pdb
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.csprojResolveAssemblyReference.cache
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.csproj.CoreCompileInputs.cache
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.AssemblyInfoInputs.cache
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.AssemblyInfo.cs
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.dll
+C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\Учеба\2 курс\NavigaTOP\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.pdb
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.deps.json
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.runtimeconfig.json
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.runtimeconfig.dev.json
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.pdb
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Database.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Database.pdb
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.csprojResolveAssemblyReference.cache
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.csproj.CoreCompileInputs.cache
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.AssemblyInfoInputs.cache
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.AssemblyInfo.cs
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.dll
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.pdb
