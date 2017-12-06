@@ -11,7 +11,7 @@ namespace Database
             RoutePlaces = new HashSet<RoutePlace>();
         }
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public double Rating { get; set; }
         public string Feedback { get; set; }
         public string Access { get; set; }

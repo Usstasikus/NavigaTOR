@@ -13,7 +13,7 @@ namespace Database
             UserPlaces = new HashSet<UserPlace>();
         }
         
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }

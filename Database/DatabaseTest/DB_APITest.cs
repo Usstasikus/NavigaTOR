@@ -8,11 +8,6 @@ namespace DatabaseTest
     [TestClass]
     public class DB_APITest
     {
-        [ClassInitialize]
-        public static void OnStartUp(TestContext testContext)
-        {            
-        }
-
         #region UserTest
 
         [TestMethod]
@@ -84,7 +79,7 @@ namespace DatabaseTest
         public void UpdateUserTest()
         {
             User user = DB_API.GetUser(1);
-            user.UpdateUser(login: "user111", password: "user111", name: "user111", surname: "user111", age: 20, tags: "tag");
+            user.Update(login: "user111", password: "user111", name: "user111", surname: "user111", age: 20, tags: "tag");
 
             Assert.AreEqual(1, user.Id);
             Assert.AreNotEqual("user1", user.Login);
@@ -99,7 +94,7 @@ namespace DatabaseTest
             Assert.AreEqual("user111", user.Name);
             Assert.AreEqual("user111", user.Surname);
 
-            user.UpdateUser(login: "user1", password: "user1", name: "user1", surname: "user1");
+            user.Update(login: "user1", password: "user1", name: "user1", surname: "user1");
 
             Assert.AreEqual("user1", user.Login);
             Assert.AreEqual("user1", user.Password);
@@ -140,15 +135,59 @@ namespace DatabaseTest
         }
 
         [TestMethod]
-        public void AddPlaceToUser()
+        public void AddRouteToUserTest()
         {
             User user = DB_API.GetUser(1);
 
+            Route route = new Route() { Rating = 5, DateTime = DateTime.Now, UserId = 1 };
+
+            DB_API.AddRoute(route);
+
+            user.AddRoute(route);
+
+            Assert.AreEqual(user, route.User);
+            Assert.AreEqual(2, user.GetRoutes().Count);
+
+            DB_API.RemoveRoute(route);
+        }
+
+        [TestMethod]
+        public void GetUserPlacesTest1()
+        {
+            User user = DB_API.GetUser(1);
+
+            List<Place> list = user.GetPlaces();
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(3, list[0].Id);
+        }
+
+        [TestMethod]
+        public void GetUserRoutesTest()
+        {
+            User user = DB_API.GetUser(1);
+            
+            Assert.AreEqual(1, user.GetRoutes().Count);
+            Assert.AreEqual(1010, new List<Route>(user.Routes)[0].Id);
         }
 
         #endregion
 
         #region PlaceTest
+
+        [TestMethod]
+        public void GetPlaceTest()
+        {
+            Assert.AreEqual(null, DB_API.GetPlace(0));
+
+            Place place = new Place() { Title = "titTest", Coordinates = "coordTest", Rating = 10 };
+            DB_API.AddPlace(place);
+
+            Place placeTest = DB_API.GetPlace(place.Id);
+            Assert.AreEqual(place, placeTest);
+
+            DB_API.RemovePlace(place.Id);
+        }
 
         [TestMethod]
         public void AddPlaceTest()
@@ -159,6 +198,38 @@ namespace DatabaseTest
             Assert.IsNotNull(DB_API.GetPlace(place.Id));
 
             DB_API.RemovePlace(place.Id);
+        }
+
+        [TestMethod]
+        public void GetPlacesTest()
+        {
+            Place placeTest1 = new Place() { Title = "newPlace1", Coordinates = "newPlace1", Rating = 1, Tags = "chineese restaurant;italian restaurant;mexican restaurant" };
+            Place placeTest2 = new Place() { Title = "newPlace2", Coordinates = "newPlace2", Rating = 1, Tags = "chineese restaurant;american restaurant;spanish restaurant" };
+            DB_API.AddPlace(placeTest1);
+            DB_API.AddPlace(placeTest2);
+
+            List<Place> list1 = DB_API.GetPlaces("chineese restaurant");
+            Assert.AreEqual(list1.Count, 2);
+
+            List<Place> list2 = DB_API.GetUser(1).GetPlaces();
+            Assert.AreEqual(list2.Count, 1);
+            Assert.AreEqual(list2[0], DB_API.GetPlace(3));
+
+            List<Place> list3 = DB_API.GetRoute(1010).GetPlaces();
+            Assert.AreEqual(list3.Count, 1);
+            Assert.AreEqual(list3[0], DB_API.GetPlace(3));
+
+            DB_API.RemovePlace(placeTest1);
+            DB_API.RemovePlace(placeTest2);
+        }
+
+        [TestMethod]
+        public void GetUserPlacesTest()
+        {
+            List<Place> list = DB_API.GetUserPlaces(1);
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(3, list[0].Id);
         }
 
         [TestMethod]
@@ -174,9 +245,48 @@ namespace DatabaseTest
             Assert.IsNull(DB_API.GetPlace(place.Id));
         }
 
+        [TestMethod]
+        public void UpdatePlaceTest()
+        {
+            Place place = DB_API.GetPlace(3);
+            place.Update("tit2");
+
+            Assert.AreEqual("tit2", place.Title);
+
+            place.Update("tit1");
+        }
+
+        [TestMethod]
+        public void GetRoutePlacesTest()
+        {
+            List<Place> list = DB_API.GetRoutePlaces(1010);
+
+            Assert.AreEqual(1, list.Count);
+        }
+
+        [TestMethod]
+        public void GetRoutesForPlaceTest()
+        {
+            Place place = DB_API.GetPlace(3);
+
+            List<Route> list = place.GetRoutes();
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(1010, list[0].Id);
+        }
+
         #endregion
 
         #region RouteTest
+
+        [TestMethod]
+        public void GetRouteTest()
+        {
+            Route route = DB_API.GetRoute(1010);
+
+            Assert.AreEqual(route.UserId, 1);
+            Assert.AreEqual(route.Rating, 5);
+        }
 
         [TestMethod]
         public void AddRouteTest()
@@ -190,20 +300,78 @@ namespace DatabaseTest
 
             Assert.IsNotNull(DB_API.GetRoute(route.Id));
 
-            //List<Place> places = route.GetPlaces();
+            Assert.AreEqual(2, route.GetPlaces().Count);
 
             DB_API.RemoveRoute(route.Id);
 
             DB_API.RemovePlace(place1.Id);
         }
 
+        [TestMethod]
+        public void GetRoutesByTagsTest()
+        {
+            List<Route> list = DB_API.GetRoutes("cool");
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(1010, list[0].Id);
+        }
+
+        [TestMethod]
+        public void GetUserRoutesTest1()
+        {
+            List<Route> list = DB_API.GetUserRoutes(1);
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(DB_API.GetRoute(1010), list[0]);
+        }
+
+        [TestMethod]
+        public void GetPlaceRoutesTest()
+        {
+            List<Route> list = DB_API.GetPlaceRoutes(3);
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(1010, list[0].Id);
+        }
+
+        [TestMethod]
+        public void GetPlacesRoutesTest()
+        {
+            Place place = DB_API.GetPlace(3);
+
+            List<Route> list = DB_API.GetPlacesRoutes(place);
+
+            Assert.AreEqual(1, list.Count);
+            Assert.AreEqual(1010, list[0].Id);
+        }
+
+        [TestMethod]
+        public void UpdateRouteTest()
+        {
+            Route route = DB_API.GetRoute(1010);
+            route.Update(6);
+
+            Assert.AreEqual(6, route.Rating);
+
+            route.Update(5);
+        }
+
         #endregion
+
+        #region Test Service
+
+        [ClassInitialize]
+        public static void OnStartUp(TestContext testContext)
+        {
+        }
 
         [ClassCleanup]
         public static void CleanUp()
         {
             DB_API.CloseConnection();
         }
+
+        #endregion
 
         #region Helper methods        
 

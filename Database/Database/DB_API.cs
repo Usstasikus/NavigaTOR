@@ -39,6 +39,7 @@ namespace Database
 
             // Add user
             user = db.Users.Add(user).Entity;
+            SaveChanges();
         }
 
         /// <summary>
@@ -64,8 +65,8 @@ namespace Database
             User userToDelete = db.Users.Local.ToList().Find(u => u.Id == userId);
 
             // If user exists...
-            if (userToDelete != null)
-                db.Users.Remove(userToDelete); // Delete user
+            if (userToDelete == null)
+                return;
 
             // Load local data
             db.UserPlaces.Load();
@@ -89,6 +90,7 @@ namespace Database
             }
 
             db.Users.Remove(userToDelete); // Delete user
+            SaveChanges();
         }
 
         /// <summary>
@@ -128,6 +130,7 @@ namespace Database
             }
 
             db.Users.Remove(userToDelete); // Delete user
+            SaveChanges();
         }
 
         /// <summary>
@@ -152,7 +155,7 @@ namespace Database
         /// <param name="surname">User's surname</param>
         /// <param name="age">User's age</param>
         /// <param name="tags">User's favorite tags</param>
-        public static void UpdateUser(this User user, string login = null, string password = null,
+        public static void Update(this User user, string login = null, string password = null,
                                                       string name = null, string surname = null,
                                                       int? age = null, string tags = null)
         {
@@ -186,9 +189,14 @@ namespace Database
         /// <param name="route">Route to add</param>
         public static void AddRoute(this User user, Route route)
         {
+            if (route.Id == 0)
+                throw new ArgumentException("Route doesn't exist in database! Add it first.");
+
             user.Routes.Add(route);
 
             db.Entry(user).State = EntityState.Modified;
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -207,6 +215,7 @@ namespace Database
             if (!db.UserPlaces.Local.ToList().Any(up => up.PlaceId == place.Id && up.UserId == user.Id))
                 db.UserPlaces.Add(new UserPlace() { UserId = user.Id, PlaceId = place.Id });
 
+            SaveChanges();
         }
 
         /// <summary>
@@ -227,6 +236,8 @@ namespace Database
 #endif
             // Remove connection
             db.UserPlaces.Remove(entity);
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -277,8 +288,8 @@ namespace Database
         public static List<Place> GetPlaces(this User user)
         {
             // Load local data
-            db.Users.Load();
             db.Places.Load();
+            db.UserPlaces.Load();
 
             // Get list of connections
             List<UserPlace> connections = db.UserPlaces.Local.ToList();
@@ -302,19 +313,18 @@ namespace Database
         /// <returns>Collection of <see cref="Route"/> of user</returns>
         public static List<Route> GetRoutes(this User user)
         {
-            // Get list of user's routes
-            ICollection<Route> userRoutes = user.Routes;
+            // Load data
+            db.Routes.Load();
 
-            // Select list of routes by user
-            List<Route> routes = (from route in userRoutes
-                                  where route.User == user
-                                  select route).ToList();
+            // Get list of user's routes
+            List<Route> userRoutes = db.Routes.Local.Where(r => r.UserId == user.Id).ToList();
+            
 #if DEBUG
                 if (!routes.Any())
                     throw new ArgumentException("There are no routes of this user!");
 #endif
 
-            return routes;
+            return userRoutes;
         }
 
         #endregion
@@ -353,6 +363,8 @@ namespace Database
             if (!db.Places.Local.ToList().Any(pl => pl.Id == place.Id))
                 // Add place to database
                 place = db.Places.Add(place).Entity;
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -366,13 +378,13 @@ namespace Database
             db.Places.Load();
 
             // Get array of tags
-            string[] tagsArr = tags.Split(' ');
+            string[] tagsArr = tags.Split(';');
             // Get list of places
             List<Place> placesList = db.Places.Local.ToList();
 
             // Select places with given tags from list of all places
             List<Place> places = (from place in placesList
-                                  where place.Tags.Split(' ').Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
+                                  where place.Tags?.Split(';')?.Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
                                   select place).ToList();
 #if DEBUG
                 if (!places.Any())
@@ -447,14 +459,15 @@ namespace Database
         {
             // Load local data
             db.Routes.Load();
+            db.RoutePlaces.Load();
 
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
 
             // Select list of routes by place
             List<Route> routes = (from route in routesList
-                                  from routePlace in route.RoutePlaces
-                                  where routePlace.Place == place
+                                  from routePlace in db.RoutePlaces.Local
+                                  where routePlace.PlaceId == place.Id
                                   select route).ToList();
 #if DEBUG
                 if (!routes.Any())
@@ -484,6 +497,8 @@ namespace Database
 
             // Remove place from database
             db.Places.Remove(place);
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -512,6 +527,8 @@ namespace Database
 
             // Remove place from database
             db.Places.Remove(place);
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -527,7 +544,7 @@ namespace Database
         /// <param name="contacts">Contacts of this place</param>
         /// <param name="rating">Place's rating</param>
         /// <param name="limitations">Place's limitations</param>
-        public static void UpdatePlace(this Place place, string title = null, string address = null,
+        public static void Update(this Place place, string title = null, string address = null,
                                                          string coordinates = null, string source = null,
                                                          string tags = null, string description = null,
                                                          string contacts = null, double rating = Double.NaN,
@@ -654,7 +671,7 @@ namespace Database
 
             // Select list of places from route's places
             List<Place> places = (from routePlace in connections
-                                  where routePlace.Route == route
+                                  where routePlace.RouteId == route.Id
                                   select routePlace.Place).ToList();
 #if DEBUG
                 if (!places.Any())
@@ -663,8 +680,6 @@ namespace Database
 
             return places;
         }
-
-        
 
         /// <summary>
         /// Get routes by tags
@@ -677,13 +692,13 @@ namespace Database
             db.Routes.Load();
 
             // Get array of tags
-            string[] tagsArr = tags.Split(' ');
+            string[] tagsArr = tags.Split(';');
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
 
             // Select routes with given tags from list of all places
             List<Route> routes = (from route in routesList
-                                  where route.Tags.Split(' ').Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
+                                  where route.Tags.Split(';').Count(tag => tagsArr.Contains(tag)) == tagsArr.Length
                                   select route).ToList();
 #if DEBUG
                 if (!routes.Any())
@@ -703,16 +718,16 @@ namespace Database
         public static List<Route> GetUserRoutes(int userId)
         {
             // Load local data
-            db.Users.Load();
+            db.Routes.Load();
 
             // Get user by id
-            User user = db.Users.Local.ToList().Find(u => u.Id == userId);
+            User user = db.Users.Find(userId);
             // Get list of user's routes
-            ICollection<Route> userRoutes = user.Routes;
+            List<Route> userRoutes = db.Routes.Local.ToList();
 
             // Select list of routes by user
             List<Route> routes = (from route in userRoutes
-                                  where route.User == user
+                                  where route.UserId == user.Id
                                   select route).ToList();
 #if DEBUG
                 if (!routes.Any())
@@ -732,18 +747,18 @@ namespace Database
         public static List<Route> GetPlaceRoutes(int placeId)
         {
             // Load local data
-            db.Places.Load();
             db.Routes.Load();
+            db.RoutePlaces.Load();
 
             // Get place by place ID
-            Place place = db.Places.Local.ToList().Find(p => p.Id == placeId);
+            Place place = db.Places.Find(placeId);
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
 
             // Select list of routes by place 
             List<Route> routes = (from route in routesList
-                                  from routePlace in route.RoutePlaces
-                                  where routePlace.Place == place
+                                  from routePlace in db.RoutePlaces.Local
+                                  where routePlace.PlaceId == place.Id
                                   select route).ToList();
 #if DEBUG
                 if (!routes.Any())
@@ -762,13 +777,14 @@ namespace Database
         {
             // Load local data
             db.Routes.Load();
+            db.RoutePlaces.Load();
 
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
 
             // Select list of routes that contain places
             List<Route> routes = (from route in routesList
-                                  where route.RoutePlaces.Count(routePlace => places.Contains(routePlace.Place)) >= places.Length // We could have route where one place occurs twice, that's why it is >= (not ==)
+                                  where db.RoutePlaces.Local.Count(routePlace => places.Contains(routePlace.Place)) >= places.Length // We could have route where one place occurs twice, that's why it is >= (not ==)
                                   select route).ToList();
 #if DEBUG
                 if (!routes.Any())
@@ -778,10 +794,6 @@ namespace Database
             return routes;
         }
 
-        
-
-        
-
         /// <summary>
         /// Add route to database
         /// </summary>
@@ -790,6 +802,12 @@ namespace Database
         {
             // Add route to database
             route = db.Routes.Add(route).Entity;
+
+            User user = db.Users.Find(route.UserId);
+
+            user.Routes.Add(route);
+
+            SaveChanges();
         }
 
         /// <summary>
@@ -798,8 +816,7 @@ namespace Database
         /// <param name="route">Route to remove</param>
         public static void RemoveRoute(Route route)
         {
-            // Remove route from database
-            db.Routes.Remove(route);
+            RemoveRoute(route.Id);
         }
 
         /// <summary>
@@ -808,11 +825,8 @@ namespace Database
         /// <param name="routeId">Route to remove (by ID)</param>
         public static void RemoveRoute(int routeId)
         {
-            // Load local data
-            db.Routes.Load();
-
             // Get route from database
-            Route route = db.Routes.Local.ToList().Find(r => r.Id == routeId);
+            Route route = db.Routes.Find(routeId);
 
             if (route == null)
                 return;
@@ -827,8 +841,14 @@ namespace Database
                     db.RoutePlaces.Remove(item);
             }
 
+            User user = db.Users.Find(route.UserId);
+
+            user.Routes.Remove(route);
+
             // Remove route from database
             db.Routes.Remove(route);
+
+            SaveChanges();
         }
 
         
@@ -842,7 +862,7 @@ namespace Database
         /// <param name="access">Type of access to route</param>
         /// <param name="description">Route's description</param>
         /// <param name="tags">Route's tags</param>
-        public static void UpdateRoute(this Route route, double rating = Double.NaN, string feedback = null,
+        public static void Update(this Route route, double rating = Double.NaN, string feedback = null,
                                                          string access = null, string description = null,
                                                          string tags = null)
         {

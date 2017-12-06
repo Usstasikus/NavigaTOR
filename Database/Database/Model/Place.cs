@@ -12,7 +12,7 @@ namespace Database
             UserPlaces = new HashSet<UserPlace>();
         }
 
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string Title { get; set; }
         public string Address { get; set; }
         public string Coordinates { get; set; }
