@@ -20,6 +20,36 @@ namespace Database
         /// </summary>
         private static navigatordbContext db = new navigatordbContext();
 
+        /// <summary>
+        /// Flag that users table has to be loaded
+        /// </summary>
+        private static bool needToLoadUsers = true;
+
+        /// <summary>
+        /// Flag that places table has to be loaded
+        /// </summary>
+        private static bool needToLoadPlaces = true;
+
+        /// <summary>
+        /// Flag that routes table has to be loaded
+        /// </summary>
+        private static bool needToLoadRoutes = true;
+
+        /// <summary>
+        /// Flag that user_places table has to be loaded
+        /// </summary>
+        private static bool needToLoadUserPlaces = true;
+
+        /// <summary>
+        /// Flag that route_places table has to be loaded
+        /// </summary>
+        private static bool needToLoadRoutePlaces = true;
+
+        /// <summary>
+        /// Flag that feedbacks table has to be loaded
+        /// </summary>
+        private static bool needToLoadFeedbacks = true;
+
         #endregion
 
         #region User
@@ -31,7 +61,11 @@ namespace Database
         public static void RegisterUser(User user)
         {
             // Load local data
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
 
             // If login is occupied...
             if (db.Users.Local.ToList().Any(u => u.Login == user.Login))
@@ -39,6 +73,7 @@ namespace Database
 
             // Add user
             user = db.Users.Add(user).Entity;
+            needToLoadUsers = true;
             SaveChanges();
         }
 
@@ -59,7 +94,11 @@ namespace Database
         public static void RemoveUser(int userId)
         {
             // Load local data
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
 
             // Get user to delete
             User userToDelete = db.Users.Local.ToList().Find(u => u.Id == userId);
@@ -69,9 +108,16 @@ namespace Database
                 return;
 
             // Load local data
-            db.UserPlaces.Load();
-            db.Routes.Load();
-
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
             // Delete all user connections to places
             foreach (UserPlace item in db.UserPlaces.Local.ToList())
             {
@@ -90,6 +136,8 @@ namespace Database
             }
 
             db.Users.Remove(userToDelete); // Delete user
+            needToLoadUsers = true;
+            needToLoadUserPlaces = true;
             SaveChanges();
         }
 
@@ -100,7 +148,11 @@ namespace Database
         public static void RemoveUser(string userLogin)
         {
             // Load local data
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
 
             User userToDelete = db.Users.Local.ToList().Find(u => u.Login == userLogin);
 
@@ -109,8 +161,16 @@ namespace Database
                 return;
 
             // Load local data
-            db.UserPlaces.Load();
-            db.Routes.Load();
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
 
             // Delete all user connections to places
             foreach (UserPlace item in db.UserPlaces.Local.ToList())
@@ -130,6 +190,8 @@ namespace Database
             }
 
             db.Users.Remove(userToDelete); // Delete user
+            needToLoadUsers = true;
+            needToLoadUserPlaces = true;
             SaveChanges();
         }
 
@@ -141,7 +203,11 @@ namespace Database
         /// <returns><see langword="true"/>, if <paramref name="login"/> and <paramref name="password"/> are correct. Else - <see langword="false"/></returns>
         public static bool Authorize(string login, string password)
         {
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
             return db.Users.Local.ToList().Find(user => user.Login == login && user.Password == password) != null;
         }
 
@@ -210,11 +276,16 @@ namespace Database
                 throw new ArgumentException("Place doesn't exist in database! Add it to database before adding to user.");
 
             // Load local data
-            db.UserPlaces.Load();
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
 
             if (!db.UserPlaces.Local.ToList().Any(up => up.PlaceId == place.Id && up.UserId == user.Id))
                 db.UserPlaces.Add(new UserPlace() { UserId = user.Id, PlaceId = place.Id });
 
+            needToLoadUserPlaces = true;
             SaveChanges();
         }
 
@@ -226,7 +297,11 @@ namespace Database
         public static void RemovePlace(this User user, Place place)
         {
             // Load local data
-            db.UserPlaces.Load();
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
 
             // Search for such connection
             var entity = db.UserPlaces.Local.ToList().Find(up => up.UserId == user.Id && up.PlaceId == place.Id);
@@ -237,6 +312,7 @@ namespace Database
             // Remove connection
             db.UserPlaces.Remove(entity);
 
+            needToLoadUserPlaces = true;
             SaveChanges();
         }
 
@@ -248,7 +324,11 @@ namespace Database
         public static User GetUser(int id)
         {
             // Load local data
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
 
             // Search for user with given ID
             User user = db.Users.Local.ToList().Find(u => u.Id == id);
@@ -268,7 +348,11 @@ namespace Database
         public static User GetUser(string login)
         {
             // Load local data
-            db.Users.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
 
             // Search for user with given Login
             User user = db.Users.Local.ToList().Find(u => u.Login == login);
@@ -288,8 +372,16 @@ namespace Database
         public static List<Place> GetPlaces(this User user)
         {
             // Load local data
-            db.Places.Load();
-            db.UserPlaces.Load();
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
 
             // Get list of connections
             List<UserPlace> connections = db.UserPlaces.Local.ToList();
@@ -314,7 +406,11 @@ namespace Database
         public static List<Route> GetRoutes(this User user)
         {
             // Load data
-            db.Routes.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
 
             // Get list of user's routes
             List<Route> userRoutes = db.Routes.Local.Where(r => r.UserId == user.Id).ToList();
@@ -339,7 +435,11 @@ namespace Database
         public static Place GetPlace(int id)
         {
             // Load local data
-            db.Places.Load();
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
 
             // Search for user with given ID
             Place place = db.Places.Local.ToList().Find(p => p.Id == id);
@@ -358,12 +458,17 @@ namespace Database
         public static void AddPlace(Place place)
         {
             // Load local data
-            db.Places.Load();
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
 
             if (!db.Places.Local.ToList().Any(pl => pl.Id == place.Id))
                 // Add place to database
                 place = db.Places.Add(place).Entity;
 
+            needToLoadPlaces = true;
             SaveChanges();
         }
 
@@ -375,7 +480,11 @@ namespace Database
         public static List<Place> GetPlaces(string tags)
         {
             // Load local data
-            db.Places.Load();
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
 
             // Get array of tags
             string[] tagsArr = tags.Split(';');
@@ -402,8 +511,16 @@ namespace Database
         public static List<Place> GetUserPlaces(int userId)
         {
             // Load local data
-            db.Users.Load();
-            db.UserPlaces.Load();
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
 
             // Get user by id
             User user = db.Users.Local.ToList().Find(u => u.Id == userId);
@@ -430,9 +547,16 @@ namespace Database
         public static List<Place> GetRoutePlaces(int routeId)
         {
             // Load local data
-            db.Routes.Load();
-            db.RoutePlaces.Load();
-
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
             // Get route by ID
             Route route = db.Routes.Local.ToList().Find(r => r.Id == routeId);
             // Get list of connections
@@ -458,8 +582,16 @@ namespace Database
         public static List<Route> GetRoutes(this Place place)
         {
             // Load local data
-            db.Routes.Load();
-            db.RoutePlaces.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
@@ -487,8 +619,16 @@ namespace Database
                 return;
 
             // Load local data
-            db.UserPlaces.Load();
-            db.UserPlaces.Load();
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // If there are some connections to users or routes
             if (db.UserPlaces.Local.ToList().Any(up => up.PlaceId == place.Id)
@@ -498,6 +638,7 @@ namespace Database
             // Remove place from database
             db.Places.Remove(place);
 
+            needToLoadPlaces = true;
             SaveChanges();
         }
 
@@ -508,7 +649,11 @@ namespace Database
         public static void RemovePlace(int placeId)
         {
             // Load local data
-            db.Places.Load();
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
 
             // Get place from database
             Place place = db.Places.Local.ToList().Find(p => p.Id == placeId);
@@ -517,8 +662,16 @@ namespace Database
                 return;
 
             // Load local data
-            db.UserPlaces.Load();
-            db.RoutePlaces.Load();
+            if (needToLoadUserPlaces)
+            {
+                db.UserPlaces.Load();
+                needToLoadUserPlaces = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // If there are some connections to users or routes
             if (db.UserPlaces.Local.ToList().Any(up => up.PlaceId == place.Id)
@@ -528,6 +681,7 @@ namespace Database
             // Remove place from database
             db.Places.Remove(place);
 
+            needToLoadPlaces = true;
             SaveChanges();
         }
 
@@ -594,7 +748,11 @@ namespace Database
         public static Route GetRoute(int id)
         {
             // Load local data
-            db.Routes.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
 
             // Search for user with given ID
             Route route = db.Routes.Local.ToList().Find(r => r.Id == id);
@@ -617,7 +775,11 @@ namespace Database
                 throw new ArgumentException("Place doesn't exist in database! Add it to database before adding to route.");
 
             // Load local data
-            db.RoutePlaces.Load();
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             RoutePlace routePlace = new RoutePlace() { RouteId = route.Id, PlaceId = place.Id };
 
@@ -625,6 +787,7 @@ namespace Database
                 db.RoutePlaces.Add(routePlace);
 
             route.RoutePlaces.Add(routePlace);
+            needToLoadRoutePlaces = true;
         }
 
         /// <summary>
@@ -643,7 +806,11 @@ namespace Database
                     throw new ArgumentException($"Place \"{place.Title}\" doesn't exist in database! Add it to database before adding to route.");
             }
             // Load local data
-            db.RoutePlaces.Load();
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             foreach (Place place in places)
             {
@@ -654,6 +821,7 @@ namespace Database
 
                 route.RoutePlaces.Add(routePlace);
             }
+            needToLoadRoutePlaces = true;
         }
 
         /// <summary>
@@ -664,7 +832,11 @@ namespace Database
         public static List<Place> GetPlaces(this Route route)
         {
             // Load local data
-            db.RoutePlaces.Load();
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // Get list of connections
             ICollection<RoutePlace> connections = db.RoutePlaces.Local.ToList();
@@ -689,7 +861,11 @@ namespace Database
         public static List<Route> GetRoutes(string tags)
         {
             // Load local data
-            db.Routes.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
 
             // Get array of tags
             string[] tagsArr = tags.Split(';');
@@ -708,8 +884,6 @@ namespace Database
             return routes;
         }
 
-        
-
         /// <summary>
         /// Get routes by user ID
         /// </summary>
@@ -718,7 +892,11 @@ namespace Database
         public static List<Route> GetUserRoutes(int userId)
         {
             // Load local data
-            db.Routes.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
 
             // Get user by id
             User user = db.Users.Find(userId);
@@ -737,8 +915,6 @@ namespace Database
             return routes;
         }
 
-        
-
         /// <summary>
         /// Get all the routes that contain given place (by id)
         /// </summary>
@@ -747,8 +923,16 @@ namespace Database
         public static List<Route> GetPlaceRoutes(int placeId)
         {
             // Load local data
-            db.Routes.Load();
-            db.RoutePlaces.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // Get place by place ID
             Place place = db.Places.Find(placeId);
@@ -776,8 +960,16 @@ namespace Database
         public static List<Route> GetPlacesRoutes(params Place[] places)
         {
             // Load local data
-            db.Routes.Load();
-            db.RoutePlaces.Load();
+            if (needToLoadRoutes)
+            {
+                db.Routes.Load();
+                needToLoadRoutes = false;
+            }
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // Get list of routes
             List<Route> routesList = db.Routes.Local.ToList();
@@ -807,6 +999,7 @@ namespace Database
 
             user.Routes.Add(route);
 
+            needToLoadRoutes = true;
             SaveChanges();
         }
 
@@ -832,7 +1025,11 @@ namespace Database
                 return;
 
             // Load local data
-            db.RoutePlaces.Load();
+            if (needToLoadRoutePlaces)
+            {
+                db.RoutePlaces.Load();
+                needToLoadRoutePlaces = false;
+            }
 
             // Delete all user connections to places
             foreach (RoutePlace item in db.RoutePlaces.Local.ToList())
@@ -848,6 +1045,7 @@ namespace Database
             // Remove route from database
             db.Routes.Remove(route);
 
+            needToLoadRoutes = true;
             SaveChanges();
         }
 
@@ -884,6 +1082,372 @@ namespace Database
 
             // Update place
             db.Routes.Update(route);
+        }
+
+        #endregion
+
+        #region Feedback
+
+        /// <summary>
+        /// Add feedback to place
+        /// </summary>
+        /// <param name="place">Place</param>
+        /// <param name="feedback">Feedback</param>
+        public static void AddFeedback(this Place place, Feedback feedback)
+        {
+            // Bind feedback to place
+            feedback.PlaceId = place.Id;
+            // Set current time
+            feedback.DateTime = DateTime.Now;
+            // Add to db
+            feedback = db.Add(feedback).Entity;
+            // Add to list of place's feedbacks
+            //place.Feedbacks.Add(feedback);
+            needToLoadFeedbacks = true;
+            // Save changes
+            SaveChanges();
+        }
+
+        /// <summary>
+        /// Add feedback to route
+        /// </summary>
+        /// <param name="route">Route</param>
+        /// <param name="feedback">Feedback</param>
+        public static void AddFeedback(this Route route, Feedback feedback)
+        {
+            // Bind feedback to route
+            feedback.RouteId = route.Id;
+            // Set current time
+            feedback.DateTime = DateTime.Now;
+            // Add to db
+            feedback = db.Feedbacks.Add(feedback).Entity;
+            // Add to list of route's feedbacks
+            route.Feedbacks.Add(feedback);
+            needToLoadFeedbacks = true;
+            // Save changes
+            SaveChanges();
+        }
+
+        /// <summary>
+        /// Remove feedback from db
+        /// </summary>
+        /// <param name="feedbackId">Feedback id</param>
+        public static void RemoveFeedback(int feedbackId)
+        {
+            // Get feedback by id
+            Feedback feedbackToDelete = db.Feedbacks.Find(feedbackId);
+
+            // If it doesn't exists...
+            if (feedbackToDelete == null)
+                return;
+
+            // Remove from db 
+            db.Feedbacks.Remove(feedbackToDelete);
+            needToLoadFeedbacks = true;
+            SaveChanges();
+        }
+
+        /// <summary>
+        /// Remove feedback from db
+        /// </summary>
+        /// <param name="feedback">Feedback</param>
+        public static void RemoveFeedback(Feedback feedback)
+        {
+            // Remove feedback
+            RemoveFeedback(feedback.Id);
+        }
+
+        /// <summary>
+        /// Get feedbacks by place
+        /// </summary>
+        /// <param name="route">Place to get feedbacks</param>
+        /// <returns>List of feedbacks on <paramref name="route"/></returns>
+        public static List<Feedback> GetFeedbacksByPlace(int placeId)
+        {
+            Place place = db.Places.Find(placeId);
+            return place.GetFeedbacks();
+        }
+
+        /// <summary>
+        /// Get feedbacks by route
+        /// </summary>
+        /// <param name="route">Route to get feedbacks</param>
+        /// <returns>List of feedbacks on <paramref name="route"/></returns>
+        public static List<Feedback> GetFeedbacksByRoute(int routeId)
+        {
+            Route route = db.Routes.Find(routeId);
+            return route.GetFeedbacks();
+        }
+
+        /// <summary>
+        /// Get feedbacks by user
+        /// </summary>
+        /// <param name="user">User to get feedbacks</param>
+        /// <returns>List of feedbacks on <paramref name="user"/></returns>
+        public static List<Feedback> GetFeedbacksByUser(int userId)
+        {
+            User user = db.Users.Find(userId);
+            return user.GetFeedbacks();
+        }
+
+        /// <summary>
+        /// Get feedbacks by place
+        /// </summary>
+        /// <param name="place">Place</param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacks(this Place place)
+        {
+            // If place is null...
+            if (place == null)
+                throw new ArgumentException("Place can't be null!");
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByPlace = (from feedback in place.Feedbacks
+                                               where feedback.PlaceId == place.Id
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByPlace;
+        }
+
+        /// <summary>
+        /// Get feedbacks by route
+        /// </summary>
+        /// <param name="route">Route</param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacks(this Route route)
+        {
+            // If route is null...
+            if (route == null)
+                throw new ArgumentException("Route can't be null!");
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByRoute = (from feedback in route.Feedbacks
+                                               where feedback.RouteId == route.Id
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByRoute;
+        }
+
+        /// <summary>
+        /// Get feedbacks by user
+        /// </summary>
+        /// <param name="user">User</param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacks(this User user)
+        {
+            // If user is null...
+            if (user == null)
+                throw new ArgumentException("User can't be null!");
+
+            // Load data
+            if (needToLoadFeedbacks)
+            {
+                db.Feedbacks.Load();
+                needToLoadFeedbacks = false;
+            }
+            List<Feedback> feedbacksList = db.Feedbacks.Local.ToList();
+
+            // Get feedbacks by user id by LINQ query
+            List<Feedback> feedbacksByUser = (from feedback in feedbacksList
+                                              where feedback.UserId == user.Id
+                                              select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByUser;
+        }
+
+        /// <summary>
+        /// Get feedbacks by place and boolean condition on date
+        /// </summary>
+        /// <param name="place">Place</param>
+        /// <param name="predicate">Boolean condition on <see cref="DateTime"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByDate(this Place place, Predicate<DateTime> predicate = null)
+        {
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByPlace = (from feedback in place.Feedbacks
+                                               where feedback.PlaceId == place.Id && predicate.Invoke(feedback.DateTime)
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByPlace;
+        }
+
+        /// <summary>
+        /// Get feedbacks by route and boolean condition on date
+        /// </summary>
+        /// <param name="route">Route</param>
+        /// <param name="predicate">Boolean condition on <see cref="DateTime"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByDate(this Route route, Predicate<DateTime> predicate = null)
+        {
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByRoute = (from feedback in route.Feedbacks
+                                               where feedback.RouteId == route.Id && predicate.Invoke(feedback.DateTime)
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByRoute;
+        }
+
+        /// <summary>
+        /// Get feedbacks by user and boolean condition on date
+        /// </summary>
+        /// <param name="user">User</param>
+        /// <param name="predicate">Boolean condition on <see cref="DateTime"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByDate(this User user, Predicate<DateTime> predicate = null)
+        {
+            // Load data
+            if (needToLoadFeedbacks)
+            {
+                db.Feedbacks.Load();
+                needToLoadFeedbacks = false;
+            }
+            List<Feedback> feedbacksList = db.Feedbacks.Local.ToList();
+
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by user id by LINQ query
+            List<Feedback> feedbacksByUser = (from feedback in feedbacksList
+                                               where feedback.UserId == user.Id && predicate.Invoke(feedback.DateTime)
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByUser;
+        }
+
+        /// <summary>
+        /// Get feedbacks by place and boolean condition on rating
+        /// </summary>
+        /// <param name="place">Place</param>
+        /// <param name="predicate">Boolean condition on <see cref="int"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByRating(this Place place, Predicate<int> predicate = null)
+        {
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByRoute = (from feedback in place.Feedbacks
+                                               where feedback.PlaceId == place.Id && predicate.Invoke(feedback.Rating)
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByRoute;
+        }
+
+        /// <summary>
+        /// Get feedbacks by route and boolean condition on rating
+        /// </summary>
+        /// <param name="route">Route</param>
+        /// <param name="predicate">Boolean condition on <see cref="int"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByRating(this Route route, Predicate<int> predicate = null)
+        {
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByRoute = (from feedback in route.Feedbacks
+                                               where feedback.RouteId == route.Id && predicate.Invoke(feedback.Rating)
+                                               select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByRoute;
+        }
+
+        /// <summary>
+        /// Get feedbacks by user and boolean condition on rating
+        /// </summary>
+        /// <param name="user">User</param>
+        /// <param name="predicate">Boolean condition on <see cref="int"/></param>
+        /// <returns>List of feedbacks</returns>
+        public static List<Feedback> GetFeedbacksByRating(this User user, Predicate<int> predicate = null)
+        {
+            // Load data
+            if (needToLoadFeedbacks)
+            {
+                db.Feedbacks.Load();
+                needToLoadFeedbacks = false;
+            }
+            List<Feedback> feedbacksList = db.Feedbacks.Local.ToList();
+
+            // Default predicate
+            if (predicate == null)
+                predicate = f => true;
+
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByUser = (from feedback in feedbacksList
+                                              where feedback.UserId == user.Id && predicate.Invoke(feedback.Rating)
+                                              select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByUser;
+        }
+
+        /// <summary>
+        /// Get feedbacks by any condition
+        /// </summary>
+        /// <param name="function">Condition</param>
+        /// <returns></returns>
+        public static List<Feedback> GetFeedbacks(Func<User, Place, Route, Feedback, bool> function)
+        {
+            // If function is null...
+            if (function == null)
+                throw new ArgumentException("Condition can't be null!");
+
+            // Load data
+            if (needToLoadFeedbacks)
+            {
+                db.Feedbacks.Load();
+                needToLoadFeedbacks = false;
+            }
+            if (needToLoadUsers)
+            {
+                db.Users.Load();
+                needToLoadUsers = false;
+            }
+            //if (needToLoadPlaces)
+            //{
+            //    db.Places.Load();
+            //    needToLoadPlaces = false;
+            //}
+            //if (needToLoadRoutes)
+            //{
+            //    db.Routes.Load();
+            //    needToLoadRoutes = false;
+            //}
+
+            List<Feedback> feedbacks = db.Feedbacks.Local.ToList();
+            List<User> users = db.Users.Local.ToList();
+            //List<Place> places = db.Places.Local.ToList();
+            //List<Route> routes = db.Routes.Local.ToList();
+            
+            // Get feedbacks by LINQ query
+            List<Feedback> feedbacksByFunc = (from feedback in feedbacks
+                                              where function(users.Find(u => u.Id == feedback.UserId),
+                                                             feedback.Place,//places.Find(p => p.Id == feedback.PlaceId),
+                                                             feedback.Route,//routes.Find(r => r.Id == feedback.RouteId),
+                                                             feedback)
+                                              select feedback).ToList();
+
+            // Return list of feedbacks
+            return feedbacksByFunc;
         }
 
         #endregion

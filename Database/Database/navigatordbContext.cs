@@ -35,7 +35,7 @@ namespace Database
         {
             modelBuilder.Entity<Feedback>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.DateTime).HasColumnType("datetime");
 

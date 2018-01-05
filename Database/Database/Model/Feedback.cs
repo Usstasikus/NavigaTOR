@@ -5,6 +5,15 @@ namespace Database
 {
     public partial class Feedback
     {
+        public Feedback() { }
+        public Feedback(int userId) => UserId = userId;
+        public Feedback(int userId, int rating = 5, string text = null)
+        {
+            UserId = userId;
+            Rating = rating;
+            Text = text;
+        }
+
         public int Id { get; set; }
         public int UserId { get; set; }
         public DateTime DateTime { get; set; }

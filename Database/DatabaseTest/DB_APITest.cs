@@ -166,7 +166,7 @@ namespace DatabaseTest
         public void GetUserRoutesTest()
         {
             User user = DB_API.GetUser(1);
-            
+
             Assert.AreEqual(1, user.GetRoutes().Count);
             Assert.AreEqual(1010, new List<Route>(user.Routes)[0].Id);
         }
@@ -354,6 +354,132 @@ namespace DatabaseTest
             Assert.AreEqual(6, route.Rating);
 
             route.Update(5);
+        }
+
+        #endregion
+
+        #region FeedbackTest
+
+        [TestMethod]
+        public void AddFeedbackTest()
+        {
+            Feedback feedbackPlace = new Feedback(1, 10, "place is good");
+            Feedback feedbackRoute = new Feedback(1, 10, "route is good");
+            Place place = DB_API.GetPlace(3);
+            Route route = DB_API.GetRoute(1010);
+
+            place.AddFeedback(feedbackPlace);
+            route.AddFeedback(feedbackRoute);
+        }
+
+        [TestMethod]
+        public void RemoveFeedbackTest()
+        {
+            List<Feedback> list = DB_API.GetFeedbacksByUser(1);
+
+            foreach (Feedback feed in list)
+                DB_API.RemoveFeedback(feed);
+        }
+
+        [TestMethod]
+        public void GetFeedbacksTest()
+        {
+            Feedback feedbackPlace = new Feedback(1, 10, "place is good");
+            Feedback feedbackRoute = new Feedback(1, 10, "route is good");
+            Place place = DB_API.GetPlace(3);
+            Route route = DB_API.GetRoute(1010);
+            place.AddFeedback(feedbackPlace);
+            route.AddFeedback(feedbackRoute);
+
+            List<Feedback> list = place.GetFeedbacks();
+            List<Feedback> list1 = route.GetFeedbacks();
+            List<Feedback> list2 = DB_API.GetFeedbacksByUser(1);
+
+            Assert.AreEqual(list.Count + list1.Count, list2.Count);
+
+            foreach (Feedback item in list)
+                DB_API.RemoveFeedback(item);
+            foreach (Feedback item in list1)
+                DB_API.RemoveFeedback(item);
+        }
+
+        [TestMethod]
+        public void GetFeedbacksByDateTest()
+        {
+            Feedback feedbackPlace = new Feedback(1, 10, "place is good");
+            Feedback feedbackRoute = new Feedback(1, 10, "route is good");
+            Place place = DB_API.GetPlace(3);
+            Route route = DB_API.GetRoute(1010);
+            place.AddFeedback(feedbackPlace);
+            route.AddFeedback(feedbackRoute);
+
+            List<Feedback> list = place.GetFeedbacksByDate(d => d > DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            List<Feedback> list1 = place.GetFeedbacksByDate(d => d < DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Assert.AreNotEqual(list.Count, list1.Count);
+
+            List<Feedback> list2 = route.GetFeedbacksByDate(d => d > DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            List<Feedback> list3 = route.GetFeedbacksByDate(d => d < DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Assert.AreNotEqual(list2.Count, list3.Count);
+
+            User user = DB_API.GetUser(1);
+            List<Feedback> list4 = user.GetFeedbacksByDate(d => d > DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            List<Feedback> list5 = user.GetFeedbacksByDate(d => d < DateTime.Parse("5/1/2008 8:30:52 AM", System.Globalization.CultureInfo.InvariantCulture));
+            Assert.AreNotEqual(list4.Count, list5.Count);
+
+            foreach (Feedback item in user.GetFeedbacks())
+                DB_API.RemoveFeedback(item);
+        }
+
+        [TestMethod]
+        public void GetFeedbacksByRatingTest()
+        {
+            Feedback feedbackPlace = new Feedback(1, 10, "place is good");
+            Feedback feedbackRoute = new Feedback(1, 10, "route is good");
+            Place place = DB_API.GetPlace(3);
+            Route route = DB_API.GetRoute(1010);
+            place.AddFeedback(feedbackPlace);
+            route.AddFeedback(feedbackRoute);
+
+            List<Feedback> list = place.GetFeedbacksByRating(r => r > 5);
+            List<Feedback> list1 = place.GetFeedbacksByRating(r => r <= 5);
+            Assert.AreNotEqual(list.Count, list1.Count);
+
+            List<Feedback> list2 = route.GetFeedbacksByRating(r => r > 5);
+            List<Feedback> list3 = route.GetFeedbacksByRating(r => r <= 5);
+            Assert.AreNotEqual(list2.Count, list3.Count);
+
+            User user = DB_API.GetUser(1);
+            List<Feedback> list4 = user.GetFeedbacksByRating(r => r > 5);
+            List<Feedback> list5 = user.GetFeedbacksByRating(r => r <= 5);
+            Assert.AreNotEqual(list4.Count, list5.Count);
+
+            foreach (Feedback item in user.GetFeedbacks())
+                DB_API.RemoveFeedback(item);
+        }
+
+        [TestMethod]
+        public void GetFeedbacksByCondition()
+        {
+            Feedback feedbackPlace = new Feedback(1, 10, "place is good");
+            Feedback feedbackRoute = new Feedback(1, 10, "route is good");
+            Place place = DB_API.GetPlace(3);
+            Route route = DB_API.GetRoute(1010);
+            place.AddFeedback(feedbackPlace);
+            route.AddFeedback(feedbackRoute);
+
+            List<Feedback> list = DB_API.GetFeedbacks((u, p, r, f) => u.Id == 1 && p != null);
+            List<Feedback> list1 = DB_API.GetFeedbacks((u, p, r, f) => u.Id == 2 && p != null);
+            List<Feedback> list2 = DB_API.GetFeedbacks((u, p, r, f) => u.Id == 1 && r != null);
+            List<Feedback> list3 = DB_API.GetFeedbacks((u, p, r, f) => f.Rating > 1);
+            
+            Assert.AreEqual(list.Count, 1);
+            Assert.AreEqual(list1.Count, 0);
+            Assert.AreEqual(list2.Count, 1);
+            Assert.AreEqual(list3.Count, 2);
+
+            User user = DB_API.GetUser(1);
+            foreach (Feedback item in user.GetFeedbacks())
+                DB_API.RemoveFeedback(item);
         }
 
         #endregion
