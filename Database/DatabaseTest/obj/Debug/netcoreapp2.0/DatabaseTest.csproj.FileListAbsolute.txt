@@ -30,3 +30,5 @@ C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2
 C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.AssemblyInfo.cs
 C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.dll
 C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\obj\Debug\netcoreapp2.0\DatabaseTest.pdb
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\Database.xml
+C:\Users\Lucky13\Documents\NavigaTOR\Database\DatabaseTest\bin\Debug\netcoreapp2.0\DatabaseTest.xml

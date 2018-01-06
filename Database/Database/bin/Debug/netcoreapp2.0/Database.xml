@@ -1,0 +1,742 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Database</name>
+    </assembly>
+    <members>
+        <member name="T:Database.DB_API">
+            <summary>
+            API of NavigaTOP database
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.db">
+            <summary>
+            Connection to navigator database
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadUsers">
+            <summary>
+            Flag that users table has to be loaded
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadPlaces">
+            <summary>
+            Flag that places table has to be loaded
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadRoutes">
+            <summary>
+            Flag that routes table has to be loaded
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadUserPlaces">
+            <summary>
+            Flag that user_places table has to be loaded
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadRoutePlaces">
+            <summary>
+            Flag that route_places table has to be loaded
+            </summary>
+        </member>
+        <member name="F:Database.DB_API.needToLoadFeedbacks">
+            <summary>
+            Flag that feedbacks table has to be loaded
+            </summary>
+        </member>
+        <member name="M:Database.DB_API.RegisterUser(Database.User)">
+            <summary>
+            Register new user
+            </summary>
+            <param name="user">User to register</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveUser(Database.User)">
+            <summary>
+            Remove user from db
+            </summary>
+            <param name="user">User to delete</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveUser(System.Int32)">
+            <summary>
+            Remove user from db by id
+            </summary>
+            <param name="userId">Id of user to delete</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveUser(System.String)">
+            <summary>
+            Remove user from db by login
+            </summary>
+            <param name="userLogin">Login of user to delete</param>
+        </member>
+        <member name="M:Database.DB_API.Authorize(System.String,System.String)">
+            <summary>
+            Authorize the user by login and password
+            </summary>
+            <param name="login">User's login</param>
+            <param name="password">User's password (hash)</param>
+            <returns><see langword="true"/>, if <paramref name="login"/> and <paramref name="password"/> are correct. Else - <see langword="false"/></returns>
+        </member>
+        <member name="M:Database.DB_API.Update(Database.User,System.String,System.String,System.String,System.String,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Update information about user
+            </summary>
+            <param name="user">User to update</param>
+            <param name="login">User's login</param>
+            <param name="password">User's password</param>
+            <param name="name">User's name</param>
+            <param name="surname">User's surname</param>
+            <param name="age">User's age</param>
+            <param name="tags">User's favorite tags</param>
+        </member>
+        <member name="M:Database.DB_API.AddRoute(Database.User,Database.Route)">
+            <summary>
+            Add route to list of user's routes
+            </summary>
+            <param name="user">User to update</param>
+            <param name="route">Route to add</param>
+        </member>
+        <member name="M:Database.DB_API.AddPlace(Database.User,Database.Place)">
+            <summary>
+            Add place to list of user's favorite places
+            </summary>
+            <param name="user">User to update</param>
+            <param name="place">Place to add</param>
+        </member>
+        <member name="M:Database.DB_API.RemovePlace(Database.User,Database.Place)">
+            <summary>
+            Remove place from list of user's favorite places
+            </summary>
+            <param name="user">User to update</param>
+            <param name="place">Place to remove</param>
+        </member>
+        <member name="M:Database.DB_API.GetUser(System.Int32)">
+            <summary>
+            Get information about user by ID
+            </summary>
+            <param name="id">ID of user</param>
+            <returns>Entity of user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetUser(System.String)">
+            <summary>
+            Get information about user by Login
+            </summary>
+            <param name="login">Login of user</param>
+            <returns>Entity of user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetPlaces(Database.User)">
+            <summary>
+            Get places by user
+            </summary>
+            <param name="user">User to analize</param>
+            <returns>Collection of <see cref="T:Database.Place"/> of user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetRoutes(Database.User)">
+            <summary>
+            Get routes by user
+            </summary>
+            <param name="user"></param>
+            <returns>Collection of <see cref="T:Database.Route"/> of user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetPlace(System.Int32)">
+            <summary>
+            Get information about place by ID
+            </summary>
+            <param name="id">ID of place</param>
+            <returns>Entity of place</returns>
+        </member>
+        <member name="M:Database.DB_API.AddPlace(Database.Place)">
+            <summary>
+            Add place to database
+            </summary>
+            <param name="place">Place to add</param>
+        </member>
+        <member name="M:Database.DB_API.GetPlaces(System.String)">
+            <summary>
+            Get places by tags
+            </summary>
+            <param name="tags">Tags to search</param>
+            <returns>Collection of <see cref="T:Database.Place"/> with given tags</returns>
+        </member>
+        <member name="M:Database.DB_API.GetUserPlaces(System.Int32)">
+            <summary>
+            Get places by user ID
+            </summary>
+            <param name="userId">User Id</param>
+            <returns>List of places by user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetRoutePlaces(System.Int32)">
+            <summary>
+            Get places by route ID
+            </summary>
+            <param name="routeId">Route to analize</param>
+            <returns>Collection of <see cref="T:Database.Place"/> of route</returns>
+        </member>
+        <member name="M:Database.DB_API.GetRoutes(Database.Place)">
+            <summary>
+            Get all the routes that contain given place
+            </summary>
+            <param name="place">Place to analize</param>
+            <returns>Collection of <see cref="T:Database.Route"/> that contain given place</returns>
+        </member>
+        <member name="M:Database.DB_API.RemovePlace(Database.Place)">
+            <summary>
+            Remove place from database
+            </summary>
+            <param name="place">Place to remove</param>
+        </member>
+        <member name="M:Database.DB_API.RemovePlace(System.Int32)">
+            <summary>
+            Remove place from database by ID
+            </summary>
+            <param name="placeId">Place to remove (by ID)</param>
+        </member>
+        <member name="M:Database.DB_API.Update(Database.Place,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Double,System.String)">
+            <summary>
+            Update place
+            </summary>
+            <param name="place">Place to update</param>
+            <param name="title">Place's title</param>
+            <param name="address">Place's address</param>
+            <param name="coordinates">Place's coordinates</param>
+            <param name="source">Place's source</param>
+            <param name="tags">Place's tags</param>
+            <param name="description">Place's description</param>
+            <param name="contacts">Contacts of this place</param>
+            <param name="rating">Place's rating</param>
+            <param name="limitations">Place's limitations</param>
+        </member>
+        <member name="M:Database.DB_API.GetRoute(System.Int32)">
+            <summary>
+            Get information about route by ID
+            </summary>
+            <param name="id">ID of route</param>
+            <returns>Entity of route</returns>
+        </member>
+        <member name="M:Database.DB_API.AddPlace(Database.Route,Database.Place)">
+            <summary>
+            Add place to route
+            </summary>
+            <param name="route">Route to update</param>
+            <param name="place">Place to add</param>
+        </member>
+        <member name="M:Database.DB_API.AddPlaces(Database.Route,Database.Place[])">
+            <summary>
+            Add places to route
+            </summary>
+            <param name="route">Route to update</param>
+            <param name="places">Places to add</param>
+        </member>
+        <member name="M:Database.DB_API.GetPlaces(Database.Route)">
+            <summary>
+            Get places by route
+            </summary>
+            <param name="route">Route to analize</param>
+            <returns>Collection of <see cref="T:Database.Place"/> of route</returns>
+        </member>
+        <member name="M:Database.DB_API.GetRoutes(System.String)">
+            <summary>
+            Get routes by tags
+            </summary>
+            <param name="tags">Tags to search</param>
+            <returns>Collection of <see cref="T:Database.Route"/> with given tags</returns>
+        </member>
+        <member name="M:Database.DB_API.GetUserRoutes(System.Int32)">
+            <summary>
+            Get routes by user ID
+            </summary>
+            <param name="userId"></param>
+            <returns>Collection of <see cref="T:Database.Route"/> of user</returns>
+        </member>
+        <member name="M:Database.DB_API.GetPlaceRoutes(System.Int32)">
+            <summary>
+            Get all the routes that contain given place (by id)
+            </summary>
+            <param name="placeId">ID of place to analize</param>
+            <returns>Collection of <see cref="T:Database.Route"/> that contain given place (by id)</returns>
+        </member>
+        <member name="M:Database.DB_API.GetPlacesRoutes(Database.Place[])">
+            <summary>
+            Get all the routes that contain given places
+            </summary>
+            <param name="places">Places to analize</param>
+            <returns>Collection of <see cref="T:Database.Route"/> that contain given place</returns>
+        </member>
+        <member name="M:Database.DB_API.AddRoute(Database.Route)">
+            <summary>
+            Add route to database
+            </summary>
+            <param name="route">Route to add</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveRoute(Database.Route)">
+            <summary>
+            Remove route from database
+            </summary>
+            <param name="route">Route to remove</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveRoute(System.Int32)">
+            <summary>
+            Remove route from database by ID
+            </summary>
+            <param name="routeId">Route to remove (by ID)</param>
+        </member>
+        <member name="M:Database.DB_API.Update(Database.Route,System.Double,System.String,System.String,System.String,System.String)">
+            <summary>
+            Update route
+            </summary>
+            <param name="route">Route to update</param>
+            <param name="rating">Route's rating</param>
+            <param name="feedback">Feedback to route</param>
+            <param name="access">Type of access to route</param>
+            <param name="description">Route's description</param>
+            <param name="tags">Route's tags</param>
+        </member>
+        <member name="M:Database.DB_API.AddFeedback(Database.Place,Database.Feedback)">
+            <summary>
+            Add feedback to place
+            </summary>
+            <param name="place">Place</param>
+            <param name="feedback">Feedback</param>
+        </member>
+        <member name="M:Database.DB_API.AddFeedback(Database.Route,Database.Feedback)">
+            <summary>
+            Add feedback to route
+            </summary>
+            <param name="route">Route</param>
+            <param name="feedback">Feedback</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveFeedback(System.Int32)">
+            <summary>
+            Remove feedback from db
+            </summary>
+            <param name="feedbackId">Feedback id</param>
+        </member>
+        <member name="M:Database.DB_API.RemoveFeedback(Database.Feedback)">
+            <summary>
+            Remove feedback from db
+            </summary>
+            <param name="feedback">Feedback</param>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByPlace(System.Int32)">
+            <summary>
+            Get feedbacks by place
+            </summary>
+            <param name="placeId">Place to get feedbacks</param>
+            <returns>List of feedbacks on place with <paramref name="placeId"/></returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByRoute(System.Int32)">
+            <summary>
+            Get feedbacks by route
+            </summary>
+            <param name="routeId">Route to get feedbacks</param>
+            <returns>List of feedbacks on route with <paramref name="routeId"/></returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByUser(System.Int32)">
+            <summary>
+            Get feedbacks by user
+            </summary>
+            <param name="userId">User to get feedbacks</param>
+            <returns>List of feedbacks on user with <paramref name="userId"/></returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacks(Database.Place)">
+            <summary>
+            Get feedbacks by place
+            </summary>
+            <param name="place">Place</param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacks(Database.Route)">
+            <summary>
+            Get feedbacks by route
+            </summary>
+            <param name="route">Route</param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacks(Database.User)">
+            <summary>
+            Get feedbacks by user
+            </summary>
+            <param name="user">User</param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByDate(Database.Place,System.Predicate{System.DateTime})">
+            <summary>
+            Get feedbacks by place and boolean condition on date
+            </summary>
+            <param name="place">Place</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.DateTime"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByDate(Database.Route,System.Predicate{System.DateTime})">
+            <summary>
+            Get feedbacks by route and boolean condition on date
+            </summary>
+            <param name="route">Route</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.DateTime"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByDate(Database.User,System.Predicate{System.DateTime})">
+            <summary>
+            Get feedbacks by user and boolean condition on date
+            </summary>
+            <param name="user">User</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.DateTime"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByRating(Database.Place,System.Predicate{System.Int32})">
+            <summary>
+            Get feedbacks by place and boolean condition on rating
+            </summary>
+            <param name="place">Place</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.Int32"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByRating(Database.Route,System.Predicate{System.Int32})">
+            <summary>
+            Get feedbacks by route and boolean condition on rating
+            </summary>
+            <param name="route">Route</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.Int32"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacksByRating(Database.User,System.Predicate{System.Int32})">
+            <summary>
+            Get feedbacks by user and boolean condition on rating
+            </summary>
+            <param name="user">User</param>
+            <param name="predicate">Boolean condition on <see cref="T:System.Int32"/></param>
+            <returns>List of feedbacks</returns>
+        </member>
+        <member name="M:Database.DB_API.GetFeedbacks(System.Func{Database.User,Database.Place,Database.Route,Database.Feedback,System.Boolean})">
+            <summary>
+            Get feedbacks by any condition
+            </summary>
+            <param name="function">Condition</param>
+            <returns></returns>
+        </member>
+        <member name="M:Database.DB_API.SaveChanges">
+            <summary>
+            Save changes to navigator db
+            </summary>
+        </member>
+        <member name="M:Database.DB_API.CloseConnection">
+            <summary>
+            Close the connection to navigator db
+            </summary>
+        </member>
+        <member name="T:Database.Feedback">
+            <summary>
+            Class for Feedback entity
+            </summary>
+        </member>
+        <member name="M:Database.Feedback.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Database.Feedback.#ctor(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            General constructor by user id with default values
+            </summary>
+            <param name="userId"></param>
+            <param name="rating"></param>
+            <param name="pros"></param>
+            <param name="cons"></param>
+            <param name="text"></param>
+        </member>
+        <member name="P:Database.Feedback.Id">
+            <summary>
+            Feedback ID
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.UserId">
+            <summary>
+            User ID who commited a feedback
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.DateTime">
+            <summary>
+            Time when feedback commited
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Rating">
+            <summary>
+            Rating for place/route
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.RouteId">
+            <summary>
+            Route ID. If null, it is a place feedback
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.PlaceId">
+            <summary>
+            Place ID. If null, it is a route feedback
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Text">
+            <summary>
+            General comment
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Pros">
+            <summary>
+            Pros of place/route
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Cons">
+            <summary>
+            Cons of place/route
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Place">
+            <summary>
+            Place reference
+            </summary>
+        </member>
+        <member name="P:Database.Feedback.Route">
+            <summary>
+            Route reference
+            </summary>
+        </member>
+        <member name="T:Database.Place">
+            <summary>
+            Class for Place entity
+            </summary>
+        </member>
+        <member name="M:Database.Place.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Database.Place.Id">
+            <summary>
+            Place ID
+            </summary>
+        </member>
+        <member name="P:Database.Place.Title">
+            <summary>
+            Place title
+            </summary>
+        </member>
+        <member name="P:Database.Place.Address">
+            <summary>
+            Place address
+            </summary>
+        </member>
+        <member name="P:Database.Place.Coordinates">
+            <summary>
+            Place coordinates
+            </summary>
+        </member>
+        <member name="P:Database.Place.Source">
+            <summary>
+            Source of info about place
+            </summary>
+        </member>
+        <member name="P:Database.Place.Tags">
+            <summary>
+            Place tags
+            </summary>
+        </member>
+        <member name="P:Database.Place.Description">
+            <summary>
+            Place description
+            </summary>
+        </member>
+        <member name="P:Database.Place.Contacts">
+            <summary>
+            Contacting info
+            </summary>
+        </member>
+        <member name="P:Database.Place.Rating">
+            <summary>
+            Place rating
+            </summary>
+        </member>
+        <member name="P:Database.Place.Limitations">
+            <summary>
+            Place limitations
+            </summary>
+        </member>
+        <member name="P:Database.Place.Feedbacks">
+            <summary>
+            Collection of feedbacks
+            </summary>
+        </member>
+        <member name="P:Database.Place.RoutePlaces">
+            <summary>
+            Collection of routes connections
+            </summary>
+        </member>
+        <member name="P:Database.Place.UserPlaces">
+            <summary>
+            Collection of users connections
+            </summary>
+        </member>
+        <member name="T:Database.Route">
+            <summary>
+            Class for Route entity
+            </summary>
+        </member>
+        <member name="M:Database.Route.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Database.Route.Id">
+            <summary>
+            Route ID
+            </summary>
+        </member>
+        <member name="P:Database.Route.Rating">
+            <summary>
+            Route rating
+            </summary>
+        </member>
+        <member name="P:Database.Route.Access">
+            <summary>
+            Is route public/private
+            </summary>
+        </member>
+        <member name="P:Database.Route.DateTime">
+            <summary>
+            Time of route creation
+            </summary>
+        </member>
+        <member name="P:Database.Route.Description">
+            <summary>
+            Route description
+            </summary>
+        </member>
+        <member name="P:Database.Route.Tags">
+            <summary>
+            Route tags
+            </summary>
+        </member>
+        <member name="P:Database.Route.UserId">
+            <summary>
+            ID of creator user
+            </summary>
+        </member>
+        <member name="P:Database.Route.User">
+            <summary>
+            User reference
+            </summary>
+        </member>
+        <member name="P:Database.Route.Feedbacks">
+            <summary>
+            Collection of feedbacks on route
+            </summary>
+        </member>
+        <member name="P:Database.Route.RoutePlaces">
+            <summary>
+            Collection of places connections
+            </summary>
+        </member>
+        <member name="T:Database.RoutePlace">
+            <summary>
+            Helping class to represent connection of Route and Place
+            </summary>
+        </member>
+        <member name="P:Database.RoutePlace.RouteId">
+            <summary>
+            Route ID
+            </summary>
+        </member>
+        <member name="P:Database.RoutePlace.PlaceId">
+            <summary>
+            Place ID
+            </summary>
+        </member>
+        <member name="P:Database.RoutePlace.Place">
+            <summary>
+            Place reference
+            </summary>
+        </member>
+        <member name="P:Database.RoutePlace.Route">
+            <summary>
+            Route reference
+            </summary>
+        </member>
+        <member name="T:Database.User">
+            <summary>
+            Class for User entity
+            </summary>
+        </member>
+        <member name="M:Database.User.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Database.User.Id">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:Database.User.Login">
+            <summary>
+            User login
+            </summary>
+        </member>
+        <member name="P:Database.User.Password">
+            <summary>
+            User password
+            </summary>
+        </member>
+        <member name="P:Database.User.Name">
+            <summary>
+            User name
+            </summary>
+        </member>
+        <member name="P:Database.User.Surname">
+            <summary>
+            User last name
+            </summary>
+        </member>
+        <member name="P:Database.User.Age">
+            <summary>
+            User age
+            </summary>
+        </member>
+        <member name="P:Database.User.Tags">
+            <summary>
+            User favourite tags
+            </summary>
+        </member>
+        <member name="P:Database.User.Routes">
+            <summary>
+            User favourite routes. Not used
+            </summary>
+        </member>
+        <member name="P:Database.User.UserPlaces">
+            <summary>
+            User favourite places. Not used
+            </summary>
+        </member>
+        <member name="T:Database.UserPlace">
+            <summary>
+            Helping class to represent connection of User and Place
+            </summary>
+        </member>
+        <member name="P:Database.UserPlace.UserId">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:Database.UserPlace.PlaceId">
+            <summary>
+            Place ID
+            </summary>
+        </member>
+        <member name="P:Database.UserPlace.Place">
+            <summary>
+            Place reference
+            </summary>
+        </member>
+        <member name="P:Database.UserPlace.User">
+            <summary>
+            User reference
+            </summary>
+        </member>
+    </members>
+</doc>

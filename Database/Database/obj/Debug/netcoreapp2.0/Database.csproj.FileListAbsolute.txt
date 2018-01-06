@@ -10,9 +10,10 @@ C:\Users\Lucky13\OneDrive - НИУ Высшая школа экономики\У
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.deps.json
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.dll
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.pdb
-C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.csprojResolveAssemblyReference.cache
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.csproj.CoreCompileInputs.cache
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.AssemblyInfoInputs.cache
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.AssemblyInfo.cs
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.dll
 C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.pdb
+C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.xml
+C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\obj\Debug\netcoreapp2.0\Database.csprojResolveAssemblyReference.cache

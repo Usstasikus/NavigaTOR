@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DatabaseTest</name>
+    </assembly>
+    <members>
+        <member name="T:DatabaseTest.DB_APITest">
+            <summary>
+            Test class for API of NavigaTOP database
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -510,8 +510,8 @@ namespace Database
         /// <summary>
         /// Get places by user ID
         /// </summary>
-        /// <param name="userId">ID of user to analize</param>
-        /// <returns>Collection of <see cref="Place"/> of user</returns>
+        /// <param name="userId">User Id</param>
+        /// <returns>List of places by user</returns>
         public static List<Place> GetUserPlaces(int userId)
         {
             // Load local data
@@ -831,7 +831,7 @@ namespace Database
         /// <summary>
         /// Get places by route
         /// </summary>
-        /// <param name="routeId">Route to analize</param>
+        /// <param name="route">Route to analize</param>
         /// <returns>Collection of <see cref="Place"/> of route</returns>
         public static List<Place> GetPlaces(this Route route)
         {
@@ -1161,8 +1161,8 @@ namespace Database
         /// <summary>
         /// Get feedbacks by place
         /// </summary>
-        /// <param name="route">Place to get feedbacks</param>
-        /// <returns>List of feedbacks on <paramref name="route"/></returns>
+        /// <param name="placeId">Place to get feedbacks</param>
+        /// <returns>List of feedbacks on place with <paramref name="placeId"/></returns>
         public static List<Feedback> GetFeedbacksByPlace(int placeId)
         {
             Place place = db.Places.Find(placeId);
@@ -1172,8 +1172,8 @@ namespace Database
         /// <summary>
         /// Get feedbacks by route
         /// </summary>
-        /// <param name="route">Route to get feedbacks</param>
-        /// <returns>List of feedbacks on <paramref name="route"/></returns>
+        /// <param name="routeId">Route to get feedbacks</param>
+        /// <returns>List of feedbacks on route with <paramref name="routeId"/></returns>
         public static List<Feedback> GetFeedbacksByRoute(int routeId)
         {
             Route route = db.Routes.Find(routeId);
@@ -1183,8 +1183,8 @@ namespace Database
         /// <summary>
         /// Get feedbacks by user
         /// </summary>
-        /// <param name="user">User to get feedbacks</param>
-        /// <returns>List of feedbacks on <paramref name="user"/></returns>
+        /// <param name="userId">User to get feedbacks</param>
+        /// <returns>List of feedbacks on user with <paramref name="userId"/></returns>
         public static List<Feedback> GetFeedbacksByUser(int userId)
         {
             User user = db.Users.Find(userId);

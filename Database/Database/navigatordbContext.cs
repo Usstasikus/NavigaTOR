@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.ComponentModel;
 
 namespace Database
 {
+    [Browsable(false)]
     public partial class navigatordbContext : DbContext
     {
         public static IConfigurationRoot Configuration { get; set; }
