@@ -20,6 +20,8 @@ namespace Database
         /// </summary>
         private static navigatordbContext db = new navigatordbContext();
 
+        #region Loader Flags
+
         /// <summary>
         /// Flag that users table has to be loaded
         /// </summary>
@@ -49,6 +51,8 @@ namespace Database
         /// Flag that feedbacks table has to be loaded
         /// </summary>
         private static bool needToLoadFeedbacks = true;
+        
+        #endregion
 
         #endregion
 

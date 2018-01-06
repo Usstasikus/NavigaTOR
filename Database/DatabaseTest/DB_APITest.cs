@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace DatabaseTest
 {
+    /// <summary>
+    /// Test class for API of NavigaTOP database
+    /// </summary>
     [TestClass]
     public class DB_APITest
     {
