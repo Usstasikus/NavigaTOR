@@ -20,14 +20,14 @@ namespace Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //    var builder = new ConfigurationBuilder()
-                //                    .SetBasePath(Directory.GetCurrentDirectory())
-                //                    .AddJsonFile("appsettings.json");
+                var builder = new ConfigurationBuilder()
+                                .SetBasePath(Directory.GetCurrentDirectory())
+                                .AddJsonFile("appsettings.json");
 
-                //    Configuration = builder.Build();
+                Configuration = builder.Build();
 
-                //    optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=navigatordb;Integrated Security=True");
+                optionsBuilder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                //optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=navigatordb;Integrated Security=True");
             }
         }
 

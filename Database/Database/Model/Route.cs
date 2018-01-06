@@ -13,7 +13,6 @@ namespace Database
 
         public int Id { get; private set; }
         public double Rating { get; set; }
-        public string Feedback { get; set; }
         public string Access { get; set; }
         public DateTime DateTime { get; set; }
         public string Description { get; set; }

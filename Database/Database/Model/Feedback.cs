@@ -7,10 +7,12 @@ namespace Database
     {
         public Feedback() { }
         public Feedback(int userId) => UserId = userId;
-        public Feedback(int userId, int rating = 5, string text = null)
+        public Feedback(int userId, int rating = 5, string pros = null, string cons = null, string text = null)
         {
             UserId = userId;
             Rating = rating;
+            Pros = pros;
+            Cons = cons;
             Text = text;
         }
 
@@ -21,6 +23,8 @@ namespace Database
         public int? RouteId { get; set; }
         public int? PlaceId { get; set; }
         public string Text { get; set; }
+        public string Pros { get; set; }
+        public string Cons { get; set; }
 
         public Place Place { get; set; }
         public Route Route { get; set; }

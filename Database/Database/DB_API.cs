@@ -1068,9 +1068,6 @@ namespace Database
             if (!Double.IsNaN(rating))
                 route.Rating = rating;
 
-            if (feedback != null)
-                route.Feedback = feedback;
-
             if (access != null)
                 route.Access = access;
 
