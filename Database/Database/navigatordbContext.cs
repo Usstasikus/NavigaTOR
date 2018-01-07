@@ -56,6 +56,8 @@ namespace Database
             {
                 entity.Property(e => e.Coordinates).IsRequired();
 
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
                 entity.Property(e => e.Title).IsRequired();
             });
 

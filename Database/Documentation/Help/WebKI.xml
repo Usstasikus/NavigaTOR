@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Access property" Url="html/3a704af1-bbdb-9780-db7c-f8703b099d31.htm" />
+  <HelpKINode Title="AddFeedback method" Url="html/e43babe4-5d96-c563-7ee9-dad85e827acc.htm" />
+  <HelpKINode Title="AddPlace method" Url="html/498a042f-8bec-5883-cafd-d02989394a26.htm" />
+  <HelpKINode Title="AddPlaces method" Url="html/ab96680d-9da9-bc18-c6d0-7a51c028c916.htm" />
+  <HelpKINode Title="Address property" Url="html/7e45c70a-7adc-9fab-7b40-79839d2bcc54.htm" />
+  <HelpKINode Title="AddRoute method" Url="html/8ef40387-7c08-9fe1-9d4d-a0f599e39be5.htm" />
+  <HelpKINode Title="Age property" Url="html/57d4f1ff-1054-7bb0-8dac-2be789644b0d.htm" />
+  <HelpKINode Title="Authorize method" Url="html/26f826ab-6795-2e00-e053-1c927e95d091.htm" />
+  <HelpKINode Title="CloseConnection method" Url="html/54c1bc8c-0a62-f7c1-70a9-c9fcfb6100f5.htm" />
+  <HelpKINode Title="Cons property" Url="html/f7072cab-783a-ab6f-6846-6a32728fdbd6.htm" />
+  <HelpKINode Title="Contacts property" Url="html/331b2ae4-b195-f536-179a-0fef9837b74b.htm" />
+  <HelpKINode Title="Coordinates property" Url="html/870eafda-098e-a028-4ce5-94c6b4e55f70.htm" />
+  <HelpKINode Title="Database namespace" Url="html/d02a74e1-9805-bea1-185d-cd7d015edac9.htm" />
+  <HelpKINode Title="Database.DB_API class" Url="html/c3c56196-ae07-aac3-47f9-f4fa8e48700b.htm" />
+  <HelpKINode Title="Database.Feedback class" Url="html/9416b5a6-cd68-8d2d-d64a-31bb489d2c7b.htm" />
+  <HelpKINode Title="Database.Place class" Url="html/9ccecf8e-59a5-6e03-72bf-fde3bbc6c6bd.htm" />
+  <HelpKINode Title="Database.Route class" Url="html/8b99b89a-686e-bbdb-c3c0-6ad0a5017ec3.htm" />
+  <HelpKINode Title="Database.User class" Url="html/c0b40f2b-9761-25ce-09a4-62a92071015e.htm" />
+  <HelpKINode Title="DateTime property">
+    <HelpKINode Title="Feedback.DateTime Property " Url="html/9a0c5990-15a5-5f5e-52b2-0eb4d271aaa1.htm" />
+    <HelpKINode Title="Place.DateTime Property " Url="html/ece25f66-7d21-3da5-98d8-3b5b0fbe9407.htm" />
+    <HelpKINode Title="Route.DateTime Property " Url="html/41e959b4-de65-fc5b-1aa4-07b921465f9a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="db field" Url="html/eaf95044-d455-0f89-9dd2-970a4754a41f.htm" />
+  <HelpKINode Title="DB_API class">
+    <HelpKINode Title="DB_API Class" Url="html/c3c56196-ae07-aac3-47f9-f4fa8e48700b.htm" />
+    <HelpKINode Title="constructor" Url="html/3cf3b2ff-4d89-1abc-7b08-6de8d4f1b38f.htm" />
+    <HelpKINode Title="fields" Url="html/b0e51184-1e30-5429-8fc9-39035fc7678a.htm" />
+    <HelpKINode Title="methods" Url="html/bca3fa28-9bb4-1dd2-cdfa-d7428cd77287.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DB_API.AddFeedback method" Url="html/e43babe4-5d96-c563-7ee9-dad85e827acc.htm" />
+  <HelpKINode Title="DB_API.AddPlace method" Url="html/498a042f-8bec-5883-cafd-d02989394a26.htm" />
+  <HelpKINode Title="DB_API.AddPlaces method" Url="html/ab96680d-9da9-bc18-c6d0-7a51c028c916.htm" />
+  <HelpKINode Title="DB_API.AddRoute method" Url="html/8ef40387-7c08-9fe1-9d4d-a0f599e39be5.htm" />
+  <HelpKINode Title="DB_API.Authorize method" Url="html/26f826ab-6795-2e00-e053-1c927e95d091.htm" />
+  <HelpKINode Title="DB_API.CloseConnection method" Url="html/54c1bc8c-0a62-f7c1-70a9-c9fcfb6100f5.htm" />
+  <HelpKINode Title="DB_API.db field" Url="html/eaf95044-d455-0f89-9dd2-970a4754a41f.htm" />
+  <HelpKINode Title="DB_API.DB_API constructor" Url="html/3cf3b2ff-4d89-1abc-7b08-6de8d4f1b38f.htm" />
+  <HelpKINode Title="DB_API.GetFeedbacksByPlace method" Url="html/ec9230e9-849a-bc60-3ec0-f8588b82a7e1.htm" />
+  <HelpKINode Title="DB_API.GetFeedbacksByRoute method" Url="html/b59c34ad-1631-bc4d-31ae-79574898d4c9.htm" />
+  <HelpKINode Title="DB_API.GetFeedbacksByUser method" Url="html/abcaf619-0216-5eab-7d5e-5bef03a07308.htm" />
+  <HelpKINode Title="DB_API.GetPlace method" Url="html/561989a7-1f20-125c-8ada-bbd13748621c.htm" />
+  <HelpKINode Title="DB_API.GetPlaceRoutes method" Url="html/bf5af483-3e3e-a7e4-353b-5ab1199fb3bd.htm" />
+  <HelpKINode Title="DB_API.GetPlacesRoutes method" Url="html/f1c0789a-5416-06c5-6510-bb068b0a940c.htm" />
+  <HelpKINode Title="DB_API.GetRoute method" Url="html/8ba1b30f-19c4-ec3b-a91a-a44d70d38144.htm" />
+  <HelpKINode Title="DB_API.GetRoutePlaces method" Url="html/74fc97fe-d8d7-d14f-70d5-1ff2f641b52a.htm" />
+  <HelpKINode Title="DB_API.GetUser method" Url="html/79b54a61-0258-3224-aec4-fc8d1b49093b.htm" />
+  <HelpKINode Title="DB_API.GetUserPlaces method" Url="html/5e3f7345-4184-c751-2612-846960d222a3.htm" />
+  <HelpKINode Title="DB_API.GetUserRoutes method" Url="html/cff1bdc7-dbd2-ab34-4db4-c3425798a6a5.htm" />
+  <HelpKINode Title="DB_API.needToLoadFeedbacks field" Url="html/5cfdb6f7-53ac-8158-b0d1-d7d198bbf96e.htm" />
+  <HelpKINode Title="DB_API.needToLoadPlaces field" Url="html/87d1702b-c218-ba3f-f474-e2e94d258dae.htm" />
+  <HelpKINode Title="DB_API.needToLoadRoutePlaces field" Url="html/9b25e03d-8728-a103-742e-4094eff1465e.htm" />
+  <HelpKINode Title="DB_API.needToLoadRoutes field" Url="html/2116d851-e367-6232-6b9a-c3d3c8417598.htm" />
+  <HelpKINode Title="DB_API.needToLoadUserPlaces field" Url="html/68ee9c1c-3dc3-b0b3-5085-7d3d0f2cfde3.htm" />
+  <HelpKINode Title="DB_API.needToLoadUsers field" Url="html/79eb9a69-4675-7686-8431-c5d968d7f265.htm" />
+  <HelpKINode Title="DB_API.RegisterUser method" Url="html/4c70c1e4-3e51-73a9-f5a4-09a9e9860cca.htm" />
+  <HelpKINode Title="DB_API.RemoveFeedback method" Url="html/8b650461-85dc-4438-641f-55f8a6975865.htm" />
+  <HelpKINode Title="DB_API.RemovePlace method" Url="html/c7b1b7f3-7358-22bb-c55f-78541d118fce.htm" />
+  <HelpKINode Title="DB_API.RemoveRoute method" Url="html/ef2f616a-bf39-8818-1154-6f18f8a19a92.htm" />
+  <HelpKINode Title="DB_API.RemoveUser method" Url="html/f4ca128e-9736-519a-5ced-490c6f13da71.htm" />
+  <HelpKINode Title="DB_API.SaveChanges method" Url="html/d3499238-0842-03ba-35d4-48e3491a8e8d.htm" />
+  <HelpKINode Title="DB_API.Update method" Url="html/2a5f0d19-9a50-e5a4-eaba-d84898a651a0.htm" />
+  <HelpKINode Title="Description property">
+    <HelpKINode Title="Place.Description Property " Url="html/327f8aa7-4331-33b4-43fe-8d0d2d2cf78f.htm" />
+    <HelpKINode Title="Route.Description Property " Url="html/8634545a-251a-f3f9-76cc-b95ad9ca6653.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Feedback class">
+    <HelpKINode Title="Feedback Class" Url="html/9416b5a6-cd68-8d2d-d64a-31bb489d2c7b.htm" />
+    <HelpKINode Title="constructor" Url="html/a3c3ed1c-68c7-822f-f718-752ba5842b91.htm" />
+    <HelpKINode Title="properties" Url="html/854ea522-64bc-ee92-13f9-a067daa8e330.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Feedback.Cons property" Url="html/f7072cab-783a-ab6f-6846-6a32728fdbd6.htm" />
+  <HelpKINode Title="Feedback.DateTime property" Url="html/9a0c5990-15a5-5f5e-52b2-0eb4d271aaa1.htm" />
+  <HelpKINode Title="Feedback.Feedback constructor" Url="html/a3c3ed1c-68c7-822f-f718-752ba5842b91.htm" />
+  <HelpKINode Title="Feedback.Id property" Url="html/93af169e-e3e6-3f4c-a5cc-ceeaef9d26ad.htm" />
+  <HelpKINode Title="Feedback.Place property" Url="html/eace6266-bfb6-7762-5ac6-befb4d6138fe.htm" />
+  <HelpKINode Title="Feedback.PlaceId property" Url="html/7524b2d9-41fd-5985-8a34-59c5609601fc.htm" />
+  <HelpKINode Title="Feedback.Pros property" Url="html/94fc601b-8baf-7d83-0d67-2ae2d5187e91.htm" />
+  <HelpKINode Title="Feedback.Rating property" Url="html/46fef5d7-f63b-92d1-5789-ddbb8370f7e0.htm" />
+  <HelpKINode Title="Feedback.Route property" Url="html/c3cadfbd-a981-06dc-9449-5801fa41b905.htm" />
+  <HelpKINode Title="Feedback.RouteId property" Url="html/a13a52e3-a7dc-5b39-8735-367940c2d597.htm" />
+  <HelpKINode Title="Feedback.Text property" Url="html/314c866c-5376-a150-3784-7b041bd907c5.htm" />
+  <HelpKINode Title="Feedback.UserId property" Url="html/10a95186-dbf7-e531-87b8-2b419033bbae.htm" />
+  <HelpKINode Title="Feedbacks property">
+    <HelpKINode Title="Place.Feedbacks Property " Url="html/77da16a2-1a76-a9ed-3f99-d304dcb61735.htm" />
+    <HelpKINode Title="Route.Feedbacks Property " Url="html/99e3fac4-4f2e-97c1-aac3-aaf3d220f078.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetFeedbacksByPlace method" Url="html/ec9230e9-849a-bc60-3ec0-f8588b82a7e1.htm" />
+  <HelpKINode Title="GetFeedbacksByRoute method" Url="html/b59c34ad-1631-bc4d-31ae-79574898d4c9.htm" />
+  <HelpKINode Title="GetFeedbacksByUser method" Url="html/abcaf619-0216-5eab-7d5e-5bef03a07308.htm" />
+  <HelpKINode Title="GetPlace method" Url="html/561989a7-1f20-125c-8ada-bbd13748621c.htm" />
+  <HelpKINode Title="GetPlaceRoutes method" Url="html/bf5af483-3e3e-a7e4-353b-5ab1199fb3bd.htm" />
+  <HelpKINode Title="GetPlacesRoutes method" Url="html/f1c0789a-5416-06c5-6510-bb068b0a940c.htm" />
+  <HelpKINode Title="GetRoute method" Url="html/8ba1b30f-19c4-ec3b-a91a-a44d70d38144.htm" />
+  <HelpKINode Title="GetRoutePlaces method" Url="html/74fc97fe-d8d7-d14f-70d5-1ff2f641b52a.htm" />
+  <HelpKINode Title="GetUser method" Url="html/79b54a61-0258-3224-aec4-fc8d1b49093b.htm" />
+  <HelpKINode Title="GetUserPlaces method" Url="html/5e3f7345-4184-c751-2612-846960d222a3.htm" />
+  <HelpKINode Title="GetUserRoutes method" Url="html/cff1bdc7-dbd2-ab34-4db4-c3425798a6a5.htm" />
+  <HelpKINode Title="Id property">
+    <HelpKINode Title="Feedback.Id Property " Url="html/93af169e-e3e6-3f4c-a5cc-ceeaef9d26ad.htm" />
+    <HelpKINode Title="Place.Id Property " Url="html/95ae7f72-70f5-3c6b-d8f2-6b9ecef9c4e8.htm" />
+    <HelpKINode Title="Route.Id Property " Url="html/aab8548b-1dca-e22a-571b-022d64ac9d09.htm" />
+    <HelpKINode Title="User.Id Property " Url="html/1292d947-94f3-28e3-6649-72587cb718e4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Limitations property" Url="html/dc3440c9-15d6-31a3-f9eb-59c63b8f99e4.htm" />
+  <HelpKINode Title="Login property" Url="html/05a6a3d0-6f81-bd0c-6f05-35e143057a84.htm" />
+  <HelpKINode Title="Name property" Url="html/e8ab4be7-c2f0-e23e-2e90-dba6c549aacf.htm" />
+  <HelpKINode Title="needToLoadFeedbacks field" Url="html/5cfdb6f7-53ac-8158-b0d1-d7d198bbf96e.htm" />
+  <HelpKINode Title="needToLoadPlaces field" Url="html/87d1702b-c218-ba3f-f474-e2e94d258dae.htm" />
+  <HelpKINode Title="needToLoadRoutePlaces field" Url="html/9b25e03d-8728-a103-742e-4094eff1465e.htm" />
+  <HelpKINode Title="needToLoadRoutes field" Url="html/2116d851-e367-6232-6b9a-c3d3c8417598.htm" />
+  <HelpKINode Title="needToLoadUserPlaces field" Url="html/68ee9c1c-3dc3-b0b3-5085-7d3d0f2cfde3.htm" />
+  <HelpKINode Title="needToLoadUsers field" Url="html/79eb9a69-4675-7686-8431-c5d968d7f265.htm" />
+  <HelpKINode Title="Password property" Url="html/218cfa94-a45b-063a-b5ca-3be5d251173f.htm" />
+  <HelpKINode Title="Place class">
+    <HelpKINode Title="Place Class" Url="html/9ccecf8e-59a5-6e03-72bf-fde3bbc6c6bd.htm" />
+    <HelpKINode Title="constructor" Url="html/3c0fc3c5-0b30-8249-4eda-9b351f5fd5f2.htm" />
+    <HelpKINode Title="methods" Url="html/f4d5c92e-8cac-2d8d-fd43-91fb4dd407dd.htm" />
+    <HelpKINode Title="properties" Url="html/d4badadf-d0e8-13f6-b59f-37f897ec0c9a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Place property" Url="html/eace6266-bfb6-7762-5ac6-befb4d6138fe.htm" />
+  <HelpKINode Title="Place.Address property" Url="html/7e45c70a-7adc-9fab-7b40-79839d2bcc54.htm" />
+  <HelpKINode Title="Place.Contacts property" Url="html/331b2ae4-b195-f536-179a-0fef9837b74b.htm" />
+  <HelpKINode Title="Place.Coordinates property" Url="html/870eafda-098e-a028-4ce5-94c6b4e55f70.htm" />
+  <HelpKINode Title="Place.DateTime property" Url="html/ece25f66-7d21-3da5-98d8-3b5b0fbe9407.htm" />
+  <HelpKINode Title="Place.Description property" Url="html/327f8aa7-4331-33b4-43fe-8d0d2d2cf78f.htm" />
+  <HelpKINode Title="Place.Feedbacks property" Url="html/77da16a2-1a76-a9ed-3f99-d304dcb61735.htm" />
+  <HelpKINode Title="Place.Id property" Url="html/95ae7f72-70f5-3c6b-d8f2-6b9ecef9c4e8.htm" />
+  <HelpKINode Title="Place.Limitations property" Url="html/dc3440c9-15d6-31a3-f9eb-59c63b8f99e4.htm" />
+  <HelpKINode Title="Place.Place constructor" Url="html/3c0fc3c5-0b30-8249-4eda-9b351f5fd5f2.htm" />
+  <HelpKINode Title="Place.Rating property" Url="html/4eabb115-701d-ef5e-434b-aef0dddf51a0.htm" />
+  <HelpKINode Title="Place.RoutePlaces property" Url="html/5534cceb-50aa-0b00-c739-880a5efc2c89.htm" />
+  <HelpKINode Title="Place.Source property" Url="html/ef28cb2f-4577-f196-bcb1-079f40011cc9.htm" />
+  <HelpKINode Title="Place.Tags property" Url="html/69fd69d6-205c-5005-e17b-7161ae46f25f.htm" />
+  <HelpKINode Title="Place.Title property" Url="html/5ff2643b-45f8-2437-e254-17229304ef35.htm" />
+  <HelpKINode Title="Place.UserPlaces property" Url="html/19e66e61-6e26-6386-cf2c-51040b83c47c.htm" />
+  <HelpKINode Title="PlaceId property" Url="html/7524b2d9-41fd-5985-8a34-59c5609601fc.htm" />
+  <HelpKINode Title="Pros property" Url="html/94fc601b-8baf-7d83-0d67-2ae2d5187e91.htm" />
+  <HelpKINode Title="Rating property">
+    <HelpKINode Title="Feedback.Rating Property " Url="html/46fef5d7-f63b-92d1-5789-ddbb8370f7e0.htm" />
+    <HelpKINode Title="Place.Rating Property " Url="html/4eabb115-701d-ef5e-434b-aef0dddf51a0.htm" />
+    <HelpKINode Title="Route.Rating Property " Url="html/0906334a-d12b-7aef-a25d-f8483889c2ee.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegisterUser method" Url="html/4c70c1e4-3e51-73a9-f5a4-09a9e9860cca.htm" />
+  <HelpKINode Title="RemoveFeedback method" Url="html/8b650461-85dc-4438-641f-55f8a6975865.htm" />
+  <HelpKINode Title="RemovePlace method" Url="html/c7b1b7f3-7358-22bb-c55f-78541d118fce.htm" />
+  <HelpKINode Title="RemoveRoute method" Url="html/ef2f616a-bf39-8818-1154-6f18f8a19a92.htm" />
+  <HelpKINode Title="RemoveUser method" Url="html/f4ca128e-9736-519a-5ced-490c6f13da71.htm" />
+  <HelpKINode Title="Route class">
+    <HelpKINode Title="Route Class" Url="html/8b99b89a-686e-bbdb-c3c0-6ad0a5017ec3.htm" />
+    <HelpKINode Title="constructor" Url="html/0093d034-ae5a-7100-ac5f-8e90971abf8e.htm" />
+    <HelpKINode Title="methods" Url="html/5a2cc567-2fee-14d9-6e15-34222c82f54a.htm" />
+    <HelpKINode Title="properties" Url="html/7e573078-f471-eb0e-ebd2-3c313f265f6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Route property" Url="html/c3cadfbd-a981-06dc-9449-5801fa41b905.htm" />
+  <HelpKINode Title="Route.Access property" Url="html/3a704af1-bbdb-9780-db7c-f8703b099d31.htm" />
+  <HelpKINode Title="Route.DateTime property" Url="html/41e959b4-de65-fc5b-1aa4-07b921465f9a.htm" />
+  <HelpKINode Title="Route.Description property" Url="html/8634545a-251a-f3f9-76cc-b95ad9ca6653.htm" />
+  <HelpKINode Title="Route.Feedbacks property" Url="html/99e3fac4-4f2e-97c1-aac3-aaf3d220f078.htm" />
+  <HelpKINode Title="Route.Id property" Url="html/aab8548b-1dca-e22a-571b-022d64ac9d09.htm" />
+  <HelpKINode Title="Route.Rating property" Url="html/0906334a-d12b-7aef-a25d-f8483889c2ee.htm" />
+  <HelpKINode Title="Route.Route constructor" Url="html/0093d034-ae5a-7100-ac5f-8e90971abf8e.htm" />
+  <HelpKINode Title="Route.RoutePlaces property" Url="html/f8c95697-ccf3-b6d5-83a5-2b676430e0ed.htm" />
+  <HelpKINode Title="Route.Tags property" Url="html/980ac7e5-b187-83b4-0316-f0c269e7cb30.htm" />
+  <HelpKINode Title="Route.User property" Url="html/a47b4d52-dde9-0161-1613-199311804eb7.htm" />
+  <HelpKINode Title="Route.UserId property" Url="html/b6ea61a0-ef7f-abe8-5b7a-f4452d76759d.htm" />
+  <HelpKINode Title="RouteId property" Url="html/a13a52e3-a7dc-5b39-8735-367940c2d597.htm" />
+  <HelpKINode Title="RoutePlaces property">
+    <HelpKINode Title="Place.RoutePlaces Property " Url="html/5534cceb-50aa-0b00-c739-880a5efc2c89.htm" />
+    <HelpKINode Title="Route.RoutePlaces Property " Url="html/f8c95697-ccf3-b6d5-83a5-2b676430e0ed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Routes property" Url="html/d6e43e17-1e32-8006-65b8-d30bd01f8e1c.htm" />
+  <HelpKINode Title="SaveChanges method" Url="html/d3499238-0842-03ba-35d4-48e3491a8e8d.htm" />
+  <HelpKINode Title="Source property" Url="html/ef28cb2f-4577-f196-bcb1-079f40011cc9.htm" />
+  <HelpKINode Title="Surname property" Url="html/edebe4be-5084-8383-4ab4-08708ac28895.htm" />
+  <HelpKINode Title="Tags property">
+    <HelpKINode Title="Place.Tags Property " Url="html/69fd69d6-205c-5005-e17b-7161ae46f25f.htm" />
+    <HelpKINode Title="Route.Tags Property " Url="html/980ac7e5-b187-83b4-0316-f0c269e7cb30.htm" />
+    <HelpKINode Title="User.Tags Property " Url="html/eeb910bb-0e15-e4a6-ca47-b1fca155591f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Text property" Url="html/314c866c-5376-a150-3784-7b041bd907c5.htm" />
+  <HelpKINode Title="Title property" Url="html/5ff2643b-45f8-2437-e254-17229304ef35.htm" />
+  <HelpKINode Title="Update method" Url="html/2a5f0d19-9a50-e5a4-eaba-d84898a651a0.htm" />
+  <HelpKINode Title="User class">
+    <HelpKINode Title="User Class" Url="html/c0b40f2b-9761-25ce-09a4-62a92071015e.htm" />
+    <HelpKINode Title="constructor" Url="html/bb88390e-50d4-049f-97e2-d9e196a0ed4c.htm" />
+    <HelpKINode Title="methods" Url="html/0bdd6e80-3c53-3875-0ed1-7a0a978a3569.htm" />
+    <HelpKINode Title="properties" Url="html/1a0f1c89-1f7c-76bc-f2af-f02b927cdd34.htm" />
+  </HelpKINode>
+  <HelpKINode Title="User property" Url="html/a47b4d52-dde9-0161-1613-199311804eb7.htm" />
+  <HelpKINode Title="User.Age property" Url="html/57d4f1ff-1054-7bb0-8dac-2be789644b0d.htm" />
+  <HelpKINode Title="User.Id property" Url="html/1292d947-94f3-28e3-6649-72587cb718e4.htm" />
+  <HelpKINode Title="User.Login property" Url="html/05a6a3d0-6f81-bd0c-6f05-35e143057a84.htm" />
+  <HelpKINode Title="User.Name property" Url="html/e8ab4be7-c2f0-e23e-2e90-dba6c549aacf.htm" />
+  <HelpKINode Title="User.Password property" Url="html/218cfa94-a45b-063a-b5ca-3be5d251173f.htm" />
+  <HelpKINode Title="User.Routes property" Url="html/d6e43e17-1e32-8006-65b8-d30bd01f8e1c.htm" />
+  <HelpKINode Title="User.Surname property" Url="html/edebe4be-5084-8383-4ab4-08708ac28895.htm" />
+  <HelpKINode Title="User.Tags property" Url="html/eeb910bb-0e15-e4a6-ca47-b1fca155591f.htm" />
+  <HelpKINode Title="User.User constructor" Url="html/bb88390e-50d4-049f-97e2-d9e196a0ed4c.htm" />
+  <HelpKINode Title="User.UserPlaces property" Url="html/5f9440db-485d-dc6f-bc9e-022ab8784a31.htm" />
+  <HelpKINode Title="UserId property">
+    <HelpKINode Title="Feedback.UserId Property " Url="html/10a95186-dbf7-e531-87b8-2b419033bbae.htm" />
+    <HelpKINode Title="Route.UserId Property " Url="html/b6ea61a0-ef7f-abe8-5b7a-f4452d76759d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UserPlaces property">
+    <HelpKINode Title="Place.UserPlaces Property " Url="html/19e66e61-6e26-6386-cf2c-51040b83c47c.htm" />
+    <HelpKINode Title="User.UserPlaces Property " Url="html/5f9440db-485d-dc6f-bc9e-022ab8784a31.htm" />
+  </HelpKINode>
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/fbf14c16-679c-420a-ae06-59e602fd057b.htm" />
+    <HelpKINode Title="history" Url="html/b0a4dde8-de35-4bb4-83fd-412bd184e215.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/d56ae40e-7db4-4064-9d2d-d8ada23a443f.htm" />
+</HelpKI>

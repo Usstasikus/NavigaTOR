@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/d56ae40e-7db4-4064-9d2d-d8ada23a443f.htm" />
+  <HelpTOCNode Id="aba794c5-e31c-4f53-a55a-96a624bf127f" Title="Version History" Url="html/b0a4dde8-de35-4bb4-83fd-412bd184e215.htm">
+    <HelpTOCNode Title="Version 1.0.0.0" Url="html/fbf14c16-679c-420a-ae06-59e602fd057b.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="e6684153-feb5-48f7-8d10-ce35f93aaa02" Title="Database" Url="html/d02a74e1-9805-bea1-185d-cd7d015edac9.htm">
+    <HelpTOCNode Id="6a934b90-cb58-4559-91a8-1ff4e7eb28c6" Title="DB_API Class" Url="html/c3c56196-ae07-aac3-47f9-f4fa8e48700b.htm">
+      <HelpTOCNode Title="DB_API Constructor " Url="html/3cf3b2ff-4d89-1abc-7b08-6de8d4f1b38f.htm" />
+      <HelpTOCNode Id="e94beaaf-bcb5-4981-bafa-33b9868d2157" Title="DB_API Methods" Url="html/bca3fa28-9bb4-1dd2-cdfa-d7428cd77287.htm">
+        <HelpTOCNode Id="77e85d78-ff7f-4e63-a882-e496f2742b25" Title="AddFeedback Method " Url="html/e43babe4-5d96-c563-7ee9-dad85e827acc.htm">
+          <HelpTOCNode Title="AddFeedback Method (Place, Feedback)" Url="html/9eee06db-d4ca-f910-eb23-f225fb91ddc1.htm" />
+          <HelpTOCNode Title="AddFeedback Method (Route, Feedback)" Url="html/5f9b6aba-f75f-9d1b-8513-21783582f47d.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="e84fd916-7c59-4901-afa6-8c06dce75dca" Title="AddPlace Method " Url="html/498a042f-8bec-5883-cafd-d02989394a26.htm">
+          <HelpTOCNode Title="AddPlace Method (Place)" Url="html/b05279f3-5ec3-d0c7-df52-eb069d4aa495.htm" />
+          <HelpTOCNode Title="AddPlace Method (Route, Place)" Url="html/3c9f1f71-8a16-dcaf-fa54-e55e3a96928f.htm" />
+          <HelpTOCNode Title="AddPlace Method (User, Place)" Url="html/33a688d7-d2ca-b8ce-0379-5fa6d873bd64.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AddPlaces Method " Url="html/ab96680d-9da9-bc18-c6d0-7a51c028c916.htm" />
+        <HelpTOCNode Id="7b56333a-30c3-481b-b0a0-ad9bb7ba7101" Title="AddRoute Method " Url="html/8ef40387-7c08-9fe1-9d4d-a0f599e39be5.htm">
+          <HelpTOCNode Title="AddRoute Method (Route)" Url="html/1583e5fd-6a2f-4efb-b243-622907c4bcfe.htm" />
+          <HelpTOCNode Title="AddRoute Method (User, Route)" Url="html/9a39bb5a-5b39-44bc-f226-898218ea3fab.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Authorize Method " Url="html/26f826ab-6795-2e00-e053-1c927e95d091.htm" />
+        <HelpTOCNode Title="CloseConnection Method " Url="html/54c1bc8c-0a62-f7c1-70a9-c9fcfb6100f5.htm" />
+        <HelpTOCNode Title="GetFeedbacksByPlace Method " Url="html/ec9230e9-849a-bc60-3ec0-f8588b82a7e1.htm" />
+        <HelpTOCNode Title="GetFeedbacksByRoute Method " Url="html/b59c34ad-1631-bc4d-31ae-79574898d4c9.htm" />
+        <HelpTOCNode Title="GetFeedbacksByUser Method " Url="html/abcaf619-0216-5eab-7d5e-5bef03a07308.htm" />
+        <HelpTOCNode Title="GetPlace Method " Url="html/561989a7-1f20-125c-8ada-bbd13748621c.htm" />
+        <HelpTOCNode Title="GetPlaceRoutes Method " Url="html/bf5af483-3e3e-a7e4-353b-5ab1199fb3bd.htm" />
+        <HelpTOCNode Title="GetPlacesRoutes Method " Url="html/f1c0789a-5416-06c5-6510-bb068b0a940c.htm" />
+        <HelpTOCNode Title="GetRoute Method " Url="html/8ba1b30f-19c4-ec3b-a91a-a44d70d38144.htm" />
+        <HelpTOCNode Title="GetRoutePlaces Method " Url="html/74fc97fe-d8d7-d14f-70d5-1ff2f641b52a.htm" />
+        <HelpTOCNode Id="630e3109-23e5-4254-beec-4f93aa17fd28" Title="GetUser Method " Url="html/79b54a61-0258-3224-aec4-fc8d1b49093b.htm">
+          <HelpTOCNode Title="GetUser Method (Int32)" Url="html/fbb74432-360b-77a1-149b-629a96f0fe16.htm" />
+          <HelpTOCNode Title="GetUser Method (String)" Url="html/0454cc79-80de-651c-4f2f-85219b757496.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="GetUserPlaces Method " Url="html/5e3f7345-4184-c751-2612-846960d222a3.htm" />
+        <HelpTOCNode Title="GetUserRoutes Method " Url="html/cff1bdc7-dbd2-ab34-4db4-c3425798a6a5.htm" />
+        <HelpTOCNode Title="RegisterUser Method " Url="html/4c70c1e4-3e51-73a9-f5a4-09a9e9860cca.htm" />
+        <HelpTOCNode Id="49dabca7-3714-4136-b477-b8419a837845" Title="RemoveFeedback Method " Url="html/8b650461-85dc-4438-641f-55f8a6975865.htm">
+          <HelpTOCNode Title="RemoveFeedback Method (Int32)" Url="html/8970b9e2-a9c5-92a8-3b09-effa45b13d7f.htm" />
+          <HelpTOCNode Title="RemoveFeedback Method (Feedback)" Url="html/2b6dbf56-1cd8-0e5d-0503-a3a59e1787dd.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="68e8e958-280b-495e-a683-9b7c7c5b5bc3" Title="RemovePlace Method " Url="html/c7b1b7f3-7358-22bb-c55f-78541d118fce.htm">
+          <HelpTOCNode Title="RemovePlace Method (Int32)" Url="html/41181296-44fd-33dc-9efb-c80dbbbaa560.htm" />
+          <HelpTOCNode Title="RemovePlace Method (Place)" Url="html/c123262e-72fb-e8fd-3baf-24ba12c29577.htm" />
+          <HelpTOCNode Title="RemovePlace Method (User, Place)" Url="html/07c3e667-5fd4-4555-3c50-2beab8d932e8.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="0af172c8-af56-4447-8bb0-a3244dad1bb8" Title="RemoveRoute Method " Url="html/ef2f616a-bf39-8818-1154-6f18f8a19a92.htm">
+          <HelpTOCNode Title="RemoveRoute Method (Int32)" Url="html/1f477397-2347-7445-be00-f4459b956c3d.htm" />
+          <HelpTOCNode Title="RemoveRoute Method (Route)" Url="html/630fb0e7-ddf7-2d0b-1057-4d1e2f3eb81e.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="b29001f6-3945-4a7a-94ba-934b05a5aafc" Title="RemoveUser Method " Url="html/f4ca128e-9736-519a-5ced-490c6f13da71.htm">
+          <HelpTOCNode Title="RemoveUser Method (Int32)" Url="html/1dd9b6b1-fd48-b369-a5fb-2ca27cbe2f71.htm" />
+          <HelpTOCNode Title="RemoveUser Method (String)" Url="html/5ec0a36c-3aa8-ed24-3259-c4aba3efcaa6.htm" />
+          <HelpTOCNode Title="RemoveUser Method (User)" Url="html/848e6091-32e5-f830-da51-d8e36a8816c4.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SaveChanges Method " Url="html/d3499238-0842-03ba-35d4-48e3491a8e8d.htm" />
+        <HelpTOCNode Id="0078a95d-6225-4465-8e63-a48816dd42a5" Title="Update Method " Url="html/2a5f0d19-9a50-e5a4-eaba-d84898a651a0.htm">
+          <HelpTOCNode Title="Update Method (Route, Double, String, String, String, String)" Url="html/c448971d-f1c8-3226-027e-23f480c67705.htm" />
+          <HelpTOCNode Title="Update Method (User, String, String, String, String, Nullable(Int32), String)" Url="html/7eb85a48-b6d0-9623-983e-790d4082e4aa.htm" />
+          <HelpTOCNode Title="Update Method (Place, String, String, String, String, String, String, String, Double, String)" Url="html/4ebccbd7-48d1-3967-f65b-94c0dd380aa6.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e9b80615-8107-4d3f-9f3e-af28d37addb4" Title="DB_API Fields" Url="html/b0e51184-1e30-5429-8fc9-39035fc7678a.htm">
+        <HelpTOCNode Title="db Field" Url="html/eaf95044-d455-0f89-9dd2-970a4754a41f.htm" />
+        <HelpTOCNode Title="needToLoadFeedbacks Field" Url="html/5cfdb6f7-53ac-8158-b0d1-d7d198bbf96e.htm" />
+        <HelpTOCNode Title="needToLoadPlaces Field" Url="html/87d1702b-c218-ba3f-f474-e2e94d258dae.htm" />
+        <HelpTOCNode Title="needToLoadRoutePlaces Field" Url="html/9b25e03d-8728-a103-742e-4094eff1465e.htm" />
+        <HelpTOCNode Title="needToLoadRoutes Field" Url="html/2116d851-e367-6232-6b9a-c3d3c8417598.htm" />
+        <HelpTOCNode Title="needToLoadUserPlaces Field" Url="html/68ee9c1c-3dc3-b0b3-5085-7d3d0f2cfde3.htm" />
+        <HelpTOCNode Title="needToLoadUsers Field" Url="html/79eb9a69-4675-7686-8431-c5d968d7f265.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2fb09ac7-bcc3-4c02-b08b-9f7877ffe275" Title="Feedback Class" Url="html/9416b5a6-cd68-8d2d-d64a-31bb489d2c7b.htm">
+      <HelpTOCNode Id="12dba1cf-0ea7-4fd1-960e-6fe782d36ab5" Title="Feedback Constructor " Url="html/a3c3ed1c-68c7-822f-f718-752ba5842b91.htm">
+        <HelpTOCNode Title="Feedback Constructor " Url="html/70336f3d-54aa-caea-a50b-194de86b2f3d.htm" />
+        <HelpTOCNode Title="Feedback Constructor (Int32, Int32, String, String, String)" Url="html/1d5848a8-96b1-8f9a-7ec5-b451a029a766.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="e875a7cf-7cff-4391-b64b-9f9a03f8e2be" Title="Feedback Properties" Url="html/854ea522-64bc-ee92-13f9-a067daa8e330.htm">
+        <HelpTOCNode Title="Cons Property " Url="html/f7072cab-783a-ab6f-6846-6a32728fdbd6.htm" />
+        <HelpTOCNode Title="DateTime Property " Url="html/9a0c5990-15a5-5f5e-52b2-0eb4d271aaa1.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/93af169e-e3e6-3f4c-a5cc-ceeaef9d26ad.htm" />
+        <HelpTOCNode Title="Place Property " Url="html/eace6266-bfb6-7762-5ac6-befb4d6138fe.htm" />
+        <HelpTOCNode Title="PlaceId Property " Url="html/7524b2d9-41fd-5985-8a34-59c5609601fc.htm" />
+        <HelpTOCNode Title="Pros Property " Url="html/94fc601b-8baf-7d83-0d67-2ae2d5187e91.htm" />
+        <HelpTOCNode Title="Rating Property " Url="html/46fef5d7-f63b-92d1-5789-ddbb8370f7e0.htm" />
+        <HelpTOCNode Title="Route Property " Url="html/c3cadfbd-a981-06dc-9449-5801fa41b905.htm" />
+        <HelpTOCNode Title="RouteId Property " Url="html/a13a52e3-a7dc-5b39-8735-367940c2d597.htm" />
+        <HelpTOCNode Title="Text Property " Url="html/314c866c-5376-a150-3784-7b041bd907c5.htm" />
+        <HelpTOCNode Title="UserId Property " Url="html/10a95186-dbf7-e531-87b8-2b419033bbae.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1605be6e-c69f-46d9-9888-d1fe8468d277" Title="Place Class" Url="html/9ccecf8e-59a5-6e03-72bf-fde3bbc6c6bd.htm">
+      <HelpTOCNode Title="Place Constructor " Url="html/3c0fc3c5-0b30-8249-4eda-9b351f5fd5f2.htm" />
+      <HelpTOCNode Id="63fb1632-73a7-4a7a-ba06-05713be6cacf" Title="Place Properties" Url="html/d4badadf-d0e8-13f6-b59f-37f897ec0c9a.htm">
+        <HelpTOCNode Title="Address Property " Url="html/7e45c70a-7adc-9fab-7b40-79839d2bcc54.htm" />
+        <HelpTOCNode Title="Contacts Property " Url="html/331b2ae4-b195-f536-179a-0fef9837b74b.htm" />
+        <HelpTOCNode Title="Coordinates Property " Url="html/870eafda-098e-a028-4ce5-94c6b4e55f70.htm" />
+        <HelpTOCNode Title="DateTime Property " Url="html/ece25f66-7d21-3da5-98d8-3b5b0fbe9407.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/327f8aa7-4331-33b4-43fe-8d0d2d2cf78f.htm" />
+        <HelpTOCNode Title="Feedbacks Property " Url="html/77da16a2-1a76-a9ed-3f99-d304dcb61735.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/95ae7f72-70f5-3c6b-d8f2-6b9ecef9c4e8.htm" />
+        <HelpTOCNode Title="Limitations Property " Url="html/dc3440c9-15d6-31a3-f9eb-59c63b8f99e4.htm" />
+        <HelpTOCNode Title="Rating Property " Url="html/4eabb115-701d-ef5e-434b-aef0dddf51a0.htm" />
+        <HelpTOCNode Title="RoutePlaces Property " Url="html/5534cceb-50aa-0b00-c739-880a5efc2c89.htm" />
+        <HelpTOCNode Title="Source Property " Url="html/ef28cb2f-4577-f196-bcb1-079f40011cc9.htm" />
+        <HelpTOCNode Title="Tags Property " Url="html/69fd69d6-205c-5005-e17b-7161ae46f25f.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/5ff2643b-45f8-2437-e254-17229304ef35.htm" />
+        <HelpTOCNode Title="UserPlaces Property " Url="html/19e66e61-6e26-6386-cf2c-51040b83c47c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Place Methods" Url="html/f4d5c92e-8cac-2d8d-fd43-91fb4dd407dd.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="d7dc0e51-825a-45fb-9edb-f0e785f9ff99" Title="Route Class" Url="html/8b99b89a-686e-bbdb-c3c0-6ad0a5017ec3.htm">
+      <HelpTOCNode Title="Route Constructor " Url="html/0093d034-ae5a-7100-ac5f-8e90971abf8e.htm" />
+      <HelpTOCNode Id="d457b472-9f92-4d06-bb71-45c33c9dbdfe" Title="Route Properties" Url="html/7e573078-f471-eb0e-ebd2-3c313f265f6c.htm">
+        <HelpTOCNode Title="Access Property " Url="html/3a704af1-bbdb-9780-db7c-f8703b099d31.htm" />
+        <HelpTOCNode Title="DateTime Property " Url="html/41e959b4-de65-fc5b-1aa4-07b921465f9a.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/8634545a-251a-f3f9-76cc-b95ad9ca6653.htm" />
+        <HelpTOCNode Title="Feedbacks Property " Url="html/99e3fac4-4f2e-97c1-aac3-aaf3d220f078.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/aab8548b-1dca-e22a-571b-022d64ac9d09.htm" />
+        <HelpTOCNode Title="Rating Property " Url="html/0906334a-d12b-7aef-a25d-f8483889c2ee.htm" />
+        <HelpTOCNode Title="RoutePlaces Property " Url="html/f8c95697-ccf3-b6d5-83a5-2b676430e0ed.htm" />
+        <HelpTOCNode Title="Tags Property " Url="html/980ac7e5-b187-83b4-0316-f0c269e7cb30.htm" />
+        <HelpTOCNode Title="User Property " Url="html/a47b4d52-dde9-0161-1613-199311804eb7.htm" />
+        <HelpTOCNode Title="UserId Property " Url="html/b6ea61a0-ef7f-abe8-5b7a-f4452d76759d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Route Methods" Url="html/5a2cc567-2fee-14d9-6e15-34222c82f54a.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="c507f114-db85-4850-a35a-9fd2d601f2cd" Title="User Class" Url="html/c0b40f2b-9761-25ce-09a4-62a92071015e.htm">
+      <HelpTOCNode Title="User Constructor " Url="html/bb88390e-50d4-049f-97e2-d9e196a0ed4c.htm" />
+      <HelpTOCNode Id="7ab1dcb4-b6c7-455c-8e57-09067109643e" Title="User Properties" Url="html/1a0f1c89-1f7c-76bc-f2af-f02b927cdd34.htm">
+        <HelpTOCNode Title="Age Property " Url="html/57d4f1ff-1054-7bb0-8dac-2be789644b0d.htm" />
+        <HelpTOCNode Title="Id Property " Url="html/1292d947-94f3-28e3-6649-72587cb718e4.htm" />
+        <HelpTOCNode Title="Login Property " Url="html/05a6a3d0-6f81-bd0c-6f05-35e143057a84.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/e8ab4be7-c2f0-e23e-2e90-dba6c549aacf.htm" />
+        <HelpTOCNode Title="Password Property " Url="html/218cfa94-a45b-063a-b5ca-3be5d251173f.htm" />
+        <HelpTOCNode Title="Routes Property " Url="html/d6e43e17-1e32-8006-65b8-d30bd01f8e1c.htm" />
+        <HelpTOCNode Title="Surname Property " Url="html/edebe4be-5084-8383-4ab4-08708ac28895.htm" />
+        <HelpTOCNode Title="Tags Property " Url="html/eeb910bb-0e15-e4a6-ca47-b1fca155591f.htm" />
+        <HelpTOCNode Title="UserPlaces Property " Url="html/5f9440db-485d-dc6f-bc9e-022ab8784a31.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="User Methods" Url="html/0bdd6e80-3c53-3875-0ed1-7a0a978a3569.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

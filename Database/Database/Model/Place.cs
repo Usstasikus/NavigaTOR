@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Database
 {
@@ -56,6 +57,10 @@ namespace Database
         /// Place limitations
         /// </summary>
         public string Limitations { get; set; }
+        /// <summary>
+        /// DateTime of adding the place to DB
+        /// </summary>
+        public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// Collection of feedbacks

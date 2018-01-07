@@ -558,6 +558,11 @@
             Place limitations
             </summary>
         </member>
+        <member name="P:Database.Place.DateTime">
+            <summary>
+            DateTime of adding the place to DB
+            </summary>
+        </member>
         <member name="P:Database.Place.Feedbacks">
             <summary>
             Collection of feedbacks
