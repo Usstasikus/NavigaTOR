@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Mikhail Nosovskiy</Authors>
+    <Company>TOP</Company>
+    <Description>Database API for NavigaTOP service.</Description>
+    <AssemblyName>Database</AssemblyName>
+    <PackageId>Database</PackageId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -802,12 +802,12 @@ namespace Database
         public static void AddPlaces(this Route route, params Place[] places)
         {
             if (route.Id == 0)
-                throw new ArgumentException($"Route doesn't exist in database! Add it to database before adding places.");
+                throw new ArgumentException("Route doesn't exist in database! Add it to database before adding places.");
 
             foreach (Place place in places)
             {
                 if (place.Id == 0)
-                    throw new ArgumentException($"Place \"{place.Title}\" doesn't exist in database! Add it to database before adding to route.");
+                    throw new ArgumentException(string.Format("Place \"{0}\" doesn't exist in database! Add it to database before adding to route.", place.Title));
             }
             // Load local data
             if (needToLoadRoutePlaces)
