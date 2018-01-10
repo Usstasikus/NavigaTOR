@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseTest", "DatabaseTes
 EndProject
 Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "Documentation", "Documentation\Documentation.shfbproj", "{503862C2-6B19-4349-8278-90FF93D46476}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourSquareAPI", "FourSquareAPI\FourSquareAPI.csproj", "{793A0AFA-9D26-42CD-AFFB-6349AF15DDFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{503862C2-6B19-4349-8278-90FF93D46476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{503862C2-6B19-4349-8278-90FF93D46476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{503862C2-6B19-4349-8278-90FF93D46476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793A0AFA-9D26-42CD-AFFB-6349AF15DDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793A0AFA-9D26-42CD-AFFB-6349AF15DDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793A0AFA-9D26-42CD-AFFB-6349AF15DDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793A0AFA-9D26-42CD-AFFB-6349AF15DDFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
