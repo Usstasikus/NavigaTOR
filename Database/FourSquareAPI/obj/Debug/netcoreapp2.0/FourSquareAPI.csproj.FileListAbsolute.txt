@@ -1,9 +1,0 @@
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\bin\Debug\netcoreapp2.0\FourSquareAPI.deps.json
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\bin\Debug\netcoreapp2.0\FourSquareAPI.dll
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\bin\Debug\netcoreapp2.0\FourSquareAPI.pdb
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.csprojResolveAssemblyReference.cache
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.csproj.CoreCompileInputs.cache
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.AssemblyInfoInputs.cache
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.AssemblyInfo.cs
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.dll
-C:\Users\Lucky13\Documents\NavigaTOR\Database\FourSquareAPI\obj\Debug\netcoreapp2.0\FourSquareAPI.pdb

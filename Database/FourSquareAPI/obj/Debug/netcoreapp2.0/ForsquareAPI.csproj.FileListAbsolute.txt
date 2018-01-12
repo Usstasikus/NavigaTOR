@@ -1,9 +1,0 @@
-D:\Projects\NavigaTOR\Database\ForsquareAPI\bin\Debug\netcoreapp2.0\ForsquareAPI.deps.json
-D:\Projects\NavigaTOR\Database\ForsquareAPI\bin\Debug\netcoreapp2.0\ForsquareAPI.dll
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.csprojResolveAssemblyReference.cache
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.csproj.CoreCompileInputs.cache
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.AssemblyInfoInputs.cache
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.AssemblyInfo.cs
-D:\Projects\NavigaTOR\Database\ForsquareAPI\bin\Debug\netcoreapp2.0\ForsquareAPI.pdb
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.dll
-D:\Projects\NavigaTOR\Database\ForsquareAPI\obj\Debug\netcoreapp2.0\ForsquareAPI.pdb
