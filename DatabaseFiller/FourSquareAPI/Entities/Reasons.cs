@@ -2,16 +2,8 @@
 {
     public class Reasons : FourSquareEntity
     {
-        public string type
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
 
-        public string message
-        {
-            get;
-            set;
-        }
+        public string Message { get; set; }
     }
 }

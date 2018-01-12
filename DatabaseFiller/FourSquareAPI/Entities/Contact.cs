@@ -2,52 +2,20 @@
 {
     public class Contact : FourSquareEntity
     {
-        public string phone
-        {
-            get;
-            set;
-        }
+        public string Phone { get; set; }
 
-        public string formattedPhone
-        {
-            get;
-            set;
-        }
+        public string FormattedPhone { get; set; }
 
-        public string email
-        {
-            get;
-            set;
-        }
+        public string Email { get; set; }
 
-        public string twitter
-        {
-            get;
-            set;
-        }
+        public string Twitter { get; set; }
 
-        public string facebook
-        {
-            get;
-            set;
-        }
+        public string Facebook { get; set; }
 
-        public string twitterSource
-        {
-            get;
-            set;
-        }
+        public string TwitterSource { get; set; }
 
-        public string fbid
-        {
-            get;
-            set;
-        }
+        public string Fbid { get; set; }
 
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
     }
 }

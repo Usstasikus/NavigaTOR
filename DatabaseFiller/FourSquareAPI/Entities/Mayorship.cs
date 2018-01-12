@@ -2,22 +2,10 @@
 {
     public class Mayorship : FourSquareEntity
     {
-        public string type
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
         
-        public string checkins
-        {
-            get;
-            set;
-        }
+        public string Checkins { get; set; }
 
-        public User user
-        {
-            get;
-            set;
-        }
+        public User User { get; set; }
     }
 }

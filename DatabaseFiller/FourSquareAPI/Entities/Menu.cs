@@ -5,58 +5,26 @@
         /// <summary>
         /// A name for this menu.
         /// </summary>
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
 
         /// <summary>
         /// A unique string identifier for this menu.
         /// </summary>
-        public string menuId
-        {
-            get;
-            set;
-        }
+        public string MenuId { get; set; }
 
         /// <summary>
         /// More information describing this menu.
         /// </summary>
-        public string description
-        {
-            get;
-            set;
-        }
+        public string Description { get; set; }
 
-        public string type
-        {
-            get;
-            set;
-        }
-        
-        public string label
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
 
-        public string anchor
-        {
-            get;
-            set;
-        }
+        public string Label { get; set; }
 
-        public string url
-        {
-            get;
-            set;
-        }
+        public string Anchor { get; set; }
 
-        public string mobileUrl
-        {
-            get;
-            set;
-        }
+        public string Url { get; set; }
+
+        public string MobileUrl { get; set; }
     }
 }

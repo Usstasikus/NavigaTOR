@@ -2,34 +2,14 @@
 {
     public class Setting : FourSquareEntity
     {
-        public string receivePings
-        {
-            get;
-            set;
-        }
+        public string ReceivePings { get; set; }
 
-        public string receiveCommentPings
-        {
-            get;
-            set;
-        }
+        public string ReceiveCommentPings { get; set; }
 
-        public string sendToTwitter
-        {
-            get;
-            set;
-        }
+        public string SendToTwitter { get; set; }
 
-        public string sendToFacebook
-        {
-            get;
-            set;
-        }
+        public string SendToFacebook { get; set; }
 
-        public string foreignConsent
-        {
-            get;
-            set;
-        }
+        public string ForeignConsent { get; set; }
     }
 }

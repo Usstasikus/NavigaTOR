@@ -5,29 +5,17 @@
         /// <summary>
         /// A unique string identifier for this photo.
         /// </summary>
-        public string id
-        {
-            get;
-            set;
-        }
+        public string Id { get; set; }
 
         /// <summary>
         /// Seconds since epoch when this photo was created.
         /// </summary>
-        public string createdAt
-        {
-            get;
-            set;
-        }
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// Start of the URL for this photo.
         /// </summary>
-        public string prefix
-        {
-            get;
-            set;
-        }
+        public string Prefix { get; set; }
 
         /// <summary>
         /// Ending of the URL for this photo.
@@ -39,97 +27,53 @@
         /// - widthXX: forces the width to be XX and scales the height proportionally
         /// - heightYY: forces the height to be YY and scales the width proportionally
         /// </summary>
-        public string suffix
-        {
-            get;
-            set;
-        }
+        public string Suffix { get; set; }
 
         /// <summary>
         /// Original photo width
         /// </summary>
-        public int width
-        {
-            get;
-            set;
-        }
+        public int Width { get; set; }
 
         /// <summary>
         /// Original photo height
         /// </summary>
-        public int height
-        {
-            get;
-            set;
-        }
+        public int Height { get; set; }
 
         /// <summary>
         /// The url for the original uploaded file.
         /// </summary>
-        public string url
-        {
-            get;
-            set;
-        }
+        public string Url { get; set; }
 
         /// <summary>
         /// The count of supported sizes, plus items, an array of supported sizes. Each size will have a string url and integer width and height parameters. The first item will be the original photo size, and the remaining items will be derived photo sizes. Just because a derived photo size (with url) is returned does not mean it is necessarily available at that url. 
         /// </summary>
-        public FourSquareEntityItems<Dimension> sizes
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<Dimension> Sizes { get; set; }
 
         /// <summary>
         /// optional If present, the name and url for the application that created this photo.
         /// </summary>
-        public Source source
-        {
-            get;
-            set;
-        }
+        public Source Source { get; set; }
 
-        public string visibility
-        {
-            get;
-            set;
-        }
+        public string Visibility { get; set; }
 
         /// <summary>
         ///  If the user is not clear from context, then a compact user is present.
         /// </summary>
-        public User user
-        {
-            get;
-            set;
-        }
+        public User User { get; set; }
 
         /// <summary>
         /// If the venue is not clear from context, then a compact venue is present.
         /// </summary>
-        public Venue venue
-        {
-            get;
-            set;
-        }
+        public Venue Venue { get; set; }
 
         /// <summary>
         ///  If the tip is not clear from context, then a compact tip is present.
         /// </summary>
-        public Tip tip
-        {
-            get;
-            set;
-        }
+        public Tip Tip { get; set; }
 
         /// <summary>
         /// If the checkin is not clear from context, then a compact checkin is present.
         /// </summary>
-        public Checkin checkin
-        {
-            get;
-            set;
-        }
+        public Checkin Checkin { get; set; }
     }   
 }

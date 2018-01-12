@@ -2,16 +2,8 @@
 {
     public class VenueExplore : FourSquareEntity
     {
-        public FourSquareEntityItems<Reasons> reasons
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<Reasons> Reasons { get; set; }
 
-        public Venue venue
-        {
-            get;
-            set;
-        }
-	}
+        public Venue Venue { get; set; }
+    }
 }

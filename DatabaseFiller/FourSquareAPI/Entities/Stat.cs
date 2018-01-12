@@ -7,29 +7,16 @@ namespace FourSquareAPI.Entities
         /// <summary>
         /// Total checkins ever here.
         /// </summary>
-        public Int64 checkinsCount
-        {
-            get;
-            set;
-        }
+        public Int64 CheckinsCount { get; set; }
 
         /// <summary>
         /// Total users who have ever checked in here.
         /// </summary>
-        public Int64 usersCount
-        {
-            get;
-            set;
-        }
+        public Int64 UsersCount { get; set; }
 
         /// <summary>
         /// Number of tips here.
         /// </summary>
-        public Int64
-            tipCount
-        {
-            get;
-            set;
-        }
-	}
+        public Int64 TipCount { get; set; }
+    }
 }

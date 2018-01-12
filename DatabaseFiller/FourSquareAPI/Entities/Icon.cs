@@ -5,12 +5,12 @@
         /// <summary>
         /// url of the image withouth the suffix
         /// </summary>
-        public string prefix { get; set; }
+        public string Prefix { get; set; }
 
         /// <summary>
         /// Suffix of the image, example .png .ico etc
         /// </summary> 
-        public string suffix { get; set; }
+        public string Suffix { get; set; }
 
     }
 }

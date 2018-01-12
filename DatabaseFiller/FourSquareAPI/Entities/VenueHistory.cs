@@ -2,22 +2,10 @@
 {
     public class VenueHistory : FourSquareEntity
     {
-        public string beenHere
-        {
-            get;
-            set;
-        }
+        public string BeenHere { get; set; }
 
-        public string lastHereAt
-        {
-            get;
-            set;
-        }
+        public string LastHereAt { get; set; }
 
-        public Venue venue
-        {
-            get;
-            set;
-        }
-	}
+        public Venue Venue { get; set; }
+    }
 }

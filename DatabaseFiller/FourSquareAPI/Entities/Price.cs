@@ -2,16 +2,8 @@
 {
     public class Price : FourSquareEntity
 	{
-        public string tier
-        {
-            get;
-            set;
-        }
+        public string Tier { get; set; }
 
-        public string message
-        {
-            get;
-            set;
-        }
-	}
+        public string Message { get; set; }
+    }
 }

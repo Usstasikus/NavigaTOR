@@ -2,22 +2,10 @@
 {
     public class Todo : FourSquareEntity
     {
-        public string id
-        {
-            get;
-            set;
-        }
+        public string Id { get; set; }
 
-        public string createdAt
-        {
-            get;
-            set;
-        }
+        public string CreatedAt { get; set; }
 
-        public string tip
-        {
-            get;
-            set;
-        }
+        public string Tip { get; set; }
     }
 }

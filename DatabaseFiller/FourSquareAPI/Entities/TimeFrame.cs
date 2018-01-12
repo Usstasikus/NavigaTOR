@@ -7,28 +7,16 @@ namespace FourSquareAPI.Entities
         /// <summary>
         /// Localized list of day names
         /// </summary>
-        public string days
-        {
-            get;
-            set;
-        }
+        public string Days { get; set; }
 
         /// <summary>
         /// An array of times the venue is open on days within the timeframe.
         /// </summary>
-        public bool includesToday
-        {
-            get;
-            set;
-        }
+        public bool IncludesToday { get; set; }
 
         /// <summary>
         /// An array of times the venue is open on days within the timeframe.
         /// </summary>
-        public List<Open> open
-        {
-            get;
-            set;
-        }
+        public List<Open> Open { get; set; }
     }
 }

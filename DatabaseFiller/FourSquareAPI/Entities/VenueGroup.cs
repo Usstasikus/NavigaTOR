@@ -5,25 +5,13 @@
         /// <summary>
         ///  A unique identifier for this venue group.
         /// </summary>
-        public string id
-        {
-            get;
-            set;
-        }
+        public string Id { get; set; }
 
         /// <summary>
         /// The name of the venue group.
         /// </summary>
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
 
-        public FourSquareEntityItems<Venue> venues
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<Venue> Venues { get; set; }
     }
 }

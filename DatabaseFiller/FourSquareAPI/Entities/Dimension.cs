@@ -2,22 +2,10 @@
 {
     public class Dimension : FourSquareEntity
     {
-        public string url
-        {
-            get;
-            set;
-        }
+        public string Url { get; set; }
 
-        public string width
-        {
-            get;
-            set;
-        }
+        public string Width { get; set; }
 
-        public string height
-        {
-            get;
-            set;
-        }
-	}
+        public string Height { get; set; }
+    }
 }

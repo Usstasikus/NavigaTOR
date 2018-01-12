@@ -320,7 +320,7 @@ namespace FourSquareAPI.Core
         public List<Checkin> GetUserCheckins(string userId, Dictionary<string, string> parameters)
         {
             FourSquareEntityItems<Checkin> checkins = GetSingle<FourSquareEntityItems<Checkin>>("/users/" + userId + "/checkins", parameters).response["checkins"];
-            return checkins.items;
+            return checkins.Items;
         }
 
         /// <summary>
@@ -335,7 +335,7 @@ namespace FourSquareAPI.Core
         public List<User> GetUserFriends(string userId, Dictionary<string, string> parameters)
         {
             FourSquareEntityItems<User> friends = GetSingle<FourSquareEntityItems<User>>("/users/" + userId + "/friends", parameters).response["friends"];
-            return friends.items;
+            return friends.Items;
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<Tip> tips = GetSingle<FourSquareEntityItems<Tip>>("/users/" + userId + "/tips", parameters).response["tips"];
 
-            return tips.items;
+            return tips.Items;
         }
 
         /*/// <summary>
@@ -384,7 +384,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<VenueHistory> venues = GetSingle<FourSquareEntityItems<VenueHistory>>("/users/self/venuehistory").response["venues"];
 
-            return venues.items;
+            return venues.Items;
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<Checkin> checkins = GetSingle<FourSquareEntityItems<Checkin>>("/venues/" + venueId + "/herenow", parameters, true).response["hereNow"];
 
-            return checkins.items;
+            return checkins.Items;
         }
 
         /// <summary>
@@ -580,7 +580,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<Tip> tips = GetSingle<FourSquareEntityItems<Tip>>("/venues/" + venueId + "/tips", parameters, true).response["tips"];
 
-            return tips.items;
+            return tips.Items;
         }
 
         /// <summary>
@@ -590,7 +590,7 @@ namespace FourSquareAPI.Core
         public List<Photo> GetVenuePhotos(string venueId, Dictionary<string, string> parameters)
         {
             FourSquareEntityItems<Photo> photos = GetSingle<FourSquareEntityItems<Photo>>("/venues/" + venueId + "/photos", parameters, true).response["photos"];
-            return photos.items;
+            return photos.Items;
         }
 
         /// <summary>
@@ -602,7 +602,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<Link> links = GetSingle<FourSquareEntityItems<Link>>("/venues/" + venueId + "/links", true).response["links"];
 
-            return links.items;
+            return links.Items;
         }
 
         /// <summary>
@@ -835,7 +835,7 @@ namespace FourSquareAPI.Core
         {
             FourSquareEntityItems<Special> specials = GetSingle<FourSquareEntityItems<Special>>("/specials/search", parameters).response["specials"];
 
-            return specials.items;
+            return specials.Items;
         }
     }
 }

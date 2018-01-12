@@ -5,28 +5,12 @@ namespace FourSquareAPI.Entities
 {
     public class FourSquareEntityItems<T> : FourSquareEntity where T : FourSquareEntity
     {
-        public string type
-        {
-            get;
-            set;
-        }
+        public string Type { get; set; }
 
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
 
-        public Int64 count
-        {
-            get;
-            set;
-        }
+        public Int64 Count { get; set; }
 
-        public List<T> items
-        {
-            get;
-            set;
-        }
+        public List<T> Items { get; set; }
     }
 }

@@ -4,28 +4,12 @@ namespace FourSquareAPI.Entities
 {
     public class Hour : FourSquareEntity
     {
-        public string status
-        {
-            get;
-            set;
-        }
+        public string Status { get; set; }
 
-        public bool isOpen
-        {
-            get;
-            set;
-        }
+        public bool IsOpen { get; set; }
 
-        public List<TimeFrame> timeframes
-        {
-            get;
-            set;
-        }
+        public List<TimeFrame> Timeframes { get; set; }
 
-        public List<Segment> segments
-        {
-            get;
-            set;
-        }
+        public List<Segment> Segments { get; set; }
     }
 }

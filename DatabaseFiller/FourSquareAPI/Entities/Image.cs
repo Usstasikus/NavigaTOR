@@ -4,22 +4,10 @@ namespace FourSquareAPI.Entities
 {
     public class Image : FourSquareEntity
     {
-        public string prefix
-        {
-            get;
-            set;
-        }
+        public string Prefix { get; set; }
 
-        public List<string> sizes
-        {
-            get;
-            set;
-        }
+        public List<string> Sizes { get; set; }
 
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
     }
 }

@@ -7,127 +7,71 @@ namespace FourSquareAPI.Entities
         /// <summary>
         /// A unique string identifier for this photo.
         /// </summary>
-        public string id
-        {
-            get;
-            set;
-        }
+        public string Id { get; set; }
 
         /// <summary>
         /// The user-entered name for this list.
         /// </summary>
-        public string name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
 
         /// <summary>
         /// The user-entered list description.
         /// </summary>
-        public string description
-        {
-            get;
-            set;
-        }
+        public string Description { get; set; }
 
         /// <summary>
         /// The compact user who created this list.
         /// </summary>
-        public User user
-        {
-            get;
-            set;
-        }
+        public User User { get; set; }
 
         /// <summary>
         /// Boolean indicating whether the acting user is following this list. Absent if there is no acting user.
         /// </summary>
-        public bool following
-        {
-            get;
-            set;
-        }
+        public bool Following { get; set; }
 
         /// <summary>
         /// Count and items of users who follow this list. All items may not be present.
         /// </summary>
-        public FourSquareEntityItems<User> followers
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<User> Followers { get; set; }
 
         /// <summary>
         /// Boolean indicating whether the acting user can edit this list. Absent if there is no acting user.
         /// </summary>
-        public bool editable
-        {
-            get;
-            set;
-        }
+        public bool Editable { get; set; }
 
         /// <summary>
         /// Boolean indicating whether this list is editable by the owner's friends.
         /// </summary>
-        public bool collaborative
-        {
-            get;
-            set;
-        }
+        public bool Collaborative { get; set; }
 
         /// <summary>
         ///  Count and items of users who have edited this list. All items may not be present.
         /// </summary>
-        public FourSquareEntityItems<User> collaborators
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<User> Collaborators { get; set; }
 
         /// <summary>
         /// The canonical URL for this list, e.g. https://foursquare.com/dens/list/a-brief-history-of-foursquare
         /// </summary>
-        public string canonicalUrl
-        {
-            get;
-            set;
-        }
+        public string CanonicalUrl { get; set; }
 
         /// <summary>
         /// A photo for this list.
         /// </summary>
-        public Photo photo
-        {
-            get;
-            set;
-        }
+        public Photo Photo { get; set; }
 
         /// <summary>
         /// The number of unique venues on the list.
         /// </summary>
-        public Int64 venueCount
-        {
-            get;
-            set;
-        }
+        public Int64 VenueCount { get; set; }
         /// <summary>
         /// The number of venues on the list visited by the acting user. Absent if there is no acting user.
         /// </summary>
-        public Int64 visitedCount
-        {
-            get;
-            set;
-        }
+        public Int64 VisitedCount { get; set; }
 
         /// <summary>
         /// Count and items of list items on this list.
         /// </summary>
-        public FourSquareEntityItems<Item> listItems
-        {
-            get;
-            set;
-        }
+        public FourSquareEntityItems<Item> ListItems { get; set; }
 
     }
 }

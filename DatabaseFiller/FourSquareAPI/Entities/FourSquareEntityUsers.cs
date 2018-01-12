@@ -4,16 +4,8 @@ namespace FourSquareAPI.Entities
 {
     public class FourSquareEntityUsers : FourSquareEntity
     {
-        public Int64 count
-        {
-            get;
-            set;
-        }
+        public Int64 Count { get; set; }
 
-        public User user
-        {
-            get;
-            set;
-        }
+        public User User { get; set; }
     }
 }

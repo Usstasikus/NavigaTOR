@@ -2,28 +2,12 @@
 {
     public class Score : FourSquareEntity
     {
-        public string recent
-        {
-            get;
-            set;
-        }
+        public string Recent { get; set; }
 
-        public string max
-        {
-            get;
-            set;
-        }
+        public string Max { get; set; }
 
-        public string goal
-        {
-            get;
-            set;
-        }
+        public string Goal { get; set; }
 
-        public string checkinsCount
-        {
-            get;
-            set;
-        }
-	}
+        public string CheckinsCount { get; set; }
+    }
 }

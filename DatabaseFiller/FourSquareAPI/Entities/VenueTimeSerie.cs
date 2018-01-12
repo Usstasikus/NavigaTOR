@@ -5,10 +5,6 @@
         /// <summary>
         /// The venue id
         /// </summary>
-        public string venueId
-        {
-            get;
-            set;
-        }
+        public string VenueId { get; set; }
     }
 }

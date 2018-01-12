@@ -2,70 +2,26 @@
 {
     public class Location : FourSquareEntity
     {
-        public string address
-        {
-            get;
-            set;
-        }
+        public string Address { get; set; }
 
-        public string crossStreet
-        {
-            get;
-            set;
-        }
+        public string CrossStreet { get; set; }
 
-        public string city
-        {
-            get;
-            set;
-        }
+        public string City { get; set; }
 
-        public string state
-        {
-            get;
-            set;
-        }
+        public string State { get; set; }
 
-        public string postalCode
-        {
-            get;
-            set;
-        }
+        public string PostalCode { get; set; }
 
-        public string country
-        {
-            get;
-            set;
-        }
+        public string Country { get; set; }
 
-        public double lat
-        {
-            get;
-            set;
-        }
+        public double Lat { get; set; }
 
-        public double lng
-        {
-            get;
-            set;
-        }
+        public double Lng { get; set; }
 
-        public int distance
-        {
-            get;
-            set;
-        }
+        public int Distance { get; set; }
 
-        public string cc
-        {
-            get;
-            set;
-        }
+        public string Cc { get; set; }
 
-        public string[] formattedAddress
-        {
-            get;
-            set;
-        }
+        public string[] formattedAddress { get; set; }
     }
 }
