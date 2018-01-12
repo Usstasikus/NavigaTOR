@@ -445,22 +445,22 @@
         </member>
         <member name="P:Database.Feedback.Id">
             <summary>
-            Feedback ID
+            Feedback ID (Do not fill!)
             </summary>
         </member>
         <member name="P:Database.Feedback.UserId">
             <summary>
-            User ID who commited a feedback
+            User ID who commited a feedback (Required)
             </summary>
         </member>
         <member name="P:Database.Feedback.DateTime">
             <summary>
-            Time when feedback commited
+            Time when feedback commited (Required)
             </summary>
         </member>
         <member name="P:Database.Feedback.Rating">
             <summary>
-            Rating for place/route
+            Rating for place/route (Required)
             </summary>
         </member>
         <member name="P:Database.Feedback.RouteId">
@@ -510,12 +510,12 @@
         </member>
         <member name="P:Database.Place.Id">
             <summary>
-            Place ID
+            Place ID (Do not fill!)
             </summary>
         </member>
         <member name="P:Database.Place.Title">
             <summary>
-            Place title
+            Place title (Required)
             </summary>
         </member>
         <member name="P:Database.Place.Address">
@@ -525,7 +525,7 @@
         </member>
         <member name="P:Database.Place.Coordinates">
             <summary>
-            Place coordinates
+            Place coordinates (Required)
             </summary>
         </member>
         <member name="P:Database.Place.Source">
@@ -550,7 +550,7 @@
         </member>
         <member name="P:Database.Place.Rating">
             <summary>
-            Place rating
+            Place rating (Required)
             </summary>
         </member>
         <member name="P:Database.Place.Limitations">
@@ -590,12 +590,12 @@
         </member>
         <member name="P:Database.Route.Id">
             <summary>
-            Route ID
+            Route ID (Do not fill!)
             </summary>
         </member>
         <member name="P:Database.Route.Rating">
             <summary>
-            Route rating
+            Route rating (Required)
             </summary>
         </member>
         <member name="P:Database.Route.Access">
@@ -605,7 +605,7 @@
         </member>
         <member name="P:Database.Route.DateTime">
             <summary>
-            Time of route creation
+            Time of route creation (Required)
             </summary>
         </member>
         <member name="P:Database.Route.Description">
@@ -620,7 +620,7 @@
         </member>
         <member name="P:Database.Route.UserId">
             <summary>
-            ID of creator user
+            ID of creator user (Required)
             </summary>
         </member>
         <member name="P:Database.Route.User">
@@ -675,17 +675,17 @@
         </member>
         <member name="P:Database.User.Id">
             <summary>
-            User ID
+            User ID (Do not fill!)
             </summary>
         </member>
         <member name="P:Database.User.Login">
             <summary>
-            User login
+            User login (Required)
             </summary>
         </member>
         <member name="P:Database.User.Password">
             <summary>
-            User password
+            User password (Required)
             </summary>
         </member>
         <member name="P:Database.User.Name">

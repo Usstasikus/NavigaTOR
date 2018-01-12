@@ -30,19 +30,19 @@ namespace Database
         }
 
         /// <summary>
-        /// Feedback ID
+        /// Feedback ID (Do not fill!)
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// User ID who commited a feedback
+        /// User ID who commited a feedback (Required)
         /// </summary>
         public int UserId { get; set; }
         /// <summary>
-        /// Time when feedback commited
+        /// Time when feedback commited (Required)
         /// </summary>
         public DateTime DateTime { get; set; }
         /// <summary>
-        /// Rating for place/route
+        /// Rating for place/route (Required)
         /// </summary>
         public int Rating { get; set; }
         /// <summary>

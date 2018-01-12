@@ -18,11 +18,11 @@ namespace Database
         }
 
         /// <summary>
-        /// Route ID
+        /// Route ID (Do not fill!)
         /// </summary>
         public int Id { get; private set; }
         /// <summary>
-        /// Route rating
+        /// Route rating (Required)
         /// </summary>
         public double Rating { get; set; }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Database
         /// </summary>
         public string Access { get; set; }
         /// <summary>
-        /// Time of route creation
+        /// Time of route creation (Required)
         /// </summary>
         public DateTime DateTime { get; set; }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Database
         /// </summary>
         public string Tags { get; set; }
         /// <summary>
-        /// ID of creator user
+        /// ID of creator user (Required)
         /// </summary>
         public int UserId { get; set; }
 

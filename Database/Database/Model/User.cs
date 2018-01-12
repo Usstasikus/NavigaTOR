@@ -17,15 +17,15 @@ namespace Database
         }
         
         /// <summary>
-        /// User ID
+        /// User ID (Do not fill!)
         /// </summary>
         public int Id { get; private set; }
         /// <summary>
-        /// User login
+        /// User login (Required)
         /// </summary>
         public string Login { get; set; }
         /// <summary>
-        /// User password
+        /// User password (Required)
         /// </summary>
         public string Password { get; set; }
         /// <summary>

@@ -18,11 +18,11 @@ namespace Database
             UserPlaces = new HashSet<UserPlace>();
         }
         /// <summary>
-        /// Place ID
+        /// Place ID (Do not fill!)
         /// </summary>
         public int Id { get; private set; }
         /// <summary>
-        /// Place title
+        /// Place title (Required)
         /// </summary>
         public string Title { get; set; }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Database
         /// </summary>
         public string Address { get; set; }
         /// <summary>
-        /// Place coordinates
+        /// Place coordinates (Required)
         /// </summary>
         public string Coordinates { get; set; }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Database
         /// </summary>
         public string Contacts { get; set; }
         /// <summary>
-        /// Place rating
+        /// Place rating (Required)
         /// </summary>
         public double Rating { get; set; }
         /// <summary>
