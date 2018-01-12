@@ -1353,7 +1353,7 @@
       ]
     },
     "Newtonsoft.Json/10.0.3": {
-      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "sha512": "wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
       "type": "package",
       "path": "newtonsoft.json/10.0.3",
       "files": [
@@ -1446,7 +1446,7 @@
       ]
     },
     "System.Collections.NonGeneric/4.3.0": {
-      "sha512": "prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "sha512": "xA9om4+OPEYjGvlr4Gur1/xYioE7I7jTWXgzRjC+DzIhIehzSLMsf3ajCqZ7hk+mT8KLaxuXiQhtnIq6m4vShA==",
       "type": "package",
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
@@ -3565,7 +3565,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ivan\\.nuget\\packages\\": {},
+    "C:\\Users\\Lucky13\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
@@ -3575,18 +3575,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Projects\\NavigaTOR\\Database\\ForsquareAPI\\FourSquareAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\FourSquareAPI\\FourSquareAPI.csproj",
       "projectName": "FourSquareAPI",
-      "projectPath": "D:\\Projects\\NavigaTOR\\Database\\ForsquareAPI\\FourSquareAPI.csproj",
-      "packagesPath": "C:\\Users\\Ivan\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\NavigaTOR\\Database\\ForsquareAPI\\obj\\",
+      "projectPath": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\FourSquareAPI\\FourSquareAPI.csproj",
+      "packagesPath": "C:\\Users\\Lucky13\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucky13\\Documents\\NavigaTOR\\Database\\FourSquareAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ivan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lucky13\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -3595,6 +3595,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Lucky13\\Documents\\Visual Studio 2017\\NuGet Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

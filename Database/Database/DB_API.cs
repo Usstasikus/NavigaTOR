@@ -13,6 +13,11 @@ namespace Database
     /// </summary>
     public static class DB_API
     {
+        static DB_API()
+        {
+
+        }
+
         #region Private static variables
 
         /// <summary>

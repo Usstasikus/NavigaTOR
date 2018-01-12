@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>Database</id>
-    <version>1.0.0</version>
+    <id>Database_1</id>
+    <version>1.0.1</version>
     <authors>Mikhail Nosovskiy</authors>
     <owners>Mikhail Nosovskiy</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,6 +19,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Release\netcoreapp2.0\Database.dll" target="lib\netcoreapp2.0\Database.dll" />
+    <file src="C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.dll" target="lib\netcoreapp2.0\Database.dll" />
+    <file src="C:\Users\Lucky13\Documents\NavigaTOR\Database\Database\bin\Debug\netcoreapp2.0\Database.xml" target="lib\netcoreapp2.0\Database.xml" />
   </files>
 </package>

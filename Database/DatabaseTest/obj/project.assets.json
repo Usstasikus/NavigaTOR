@@ -2085,7 +2085,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "Database/1.0.0": {
+      "Database/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
         "dependencies": {
@@ -6945,7 +6945,7 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "Database/1.0.0": {
+    "Database/1.0.1": {
       "type": "project",
       "path": "../Database/Database.csproj",
       "msbuildProject": "../Database/Database.csproj"
@@ -6953,7 +6953,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Database >= 1.0.0",
+      "Database >= 1.0.1",
       "MSTest.TestAdapter >= 1.1.18",
       "MSTest.TestFramework >= 1.1.18",
       "Microsoft.NET.Test.Sdk >= 15.3.0-preview-20170628-02",
