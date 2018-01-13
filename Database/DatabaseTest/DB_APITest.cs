@@ -204,6 +204,19 @@ namespace DatabaseTest
         }
 
         [TestMethod]
+        public void AddPlacesTest()
+        {
+            List<Place> list = new List<Place>() { new Place() { Title = "newPlace1", Coordinates = "newPlace1", Rating = 1 }, new Place() { Title = "newPlace2", Coordinates = "newPlace2", Rating = 1 } };
+            DB_API.AddPlaces(list, false);
+
+            Assert.IsNotNull(DB_API.GetPlace(list[0].Id));
+            Assert.IsNotNull(DB_API.GetPlace(list[1].Id));
+
+            DB_API.RemovePlace(list[0].Id);
+            DB_API.RemovePlace(list[1].Id);
+        }
+
+        [TestMethod]
         public void GetPlacesTest()
         {
             Place placeTest1 = new Place() { Title = "newPlace1", Coordinates = "newPlace1", Rating = 1, Tags = "chineese restaurant;italian restaurant;mexican restaurant" };

@@ -482,6 +482,46 @@ namespace Database
         }
 
         /// <summary>
+        /// Add list of places to database
+        /// </summary>
+        /// <param name="places"><see cref="List{Place}"/> of places to add</param>
+        /// <param name="checkExisting">Flag weather you want to check added places if they are already in database</param>
+        public static void AddPlaces(List<Place> places, bool checkExisting = true)
+        {
+            // Load local data
+            if (needToLoadPlaces)
+            {
+                db.Places.Load();
+                needToLoadPlaces = false;
+            }
+
+            // Local list of places
+            List<Place> list = db.Places.Local.ToList();
+
+            // Add places to database
+            if (checkExisting)
+            {
+                for (int i = 0; i < places.Count; i++)
+                {
+                    if (!list.Any(pl => pl.Id == places[i].Id))
+                        // Add only if it doesn't exist in database
+                        places[i] = db.Places.Add(places[i]).Entity;
+                }
+            }
+            else
+            {
+                // Add places to database
+                for (int i = 0; i < places.Count; i++)
+                {
+                    places[i] = db.Places.Add(places[i]).Entity;
+                }
+            }
+
+            needToLoadPlaces = true;
+            SaveChanges();
+        }
+
+        /// <summary>
         /// Get places by tags
         /// </summary>
         /// <param name="tags">Tags to search</param>

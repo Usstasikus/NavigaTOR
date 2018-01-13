@@ -150,6 +150,13 @@
             </summary>
             <param name="place">Place to add</param>
         </member>
+        <member name="M:Database.DB_API.AddPlaces(System.Collections.Generic.List{Database.Place},System.Boolean)">
+            <summary>
+            Add list of places to database
+            </summary>
+            <param name="places"><see cref="T:System.Collections.Generic.List`1"/> of places to add</param>
+            <param name="checkExisting">Flag weather you want to check added places if they are already in database</param>
+        </member>
         <member name="M:Database.DB_API.GetPlaces(System.String)">
             <summary>
             Get places by tags
