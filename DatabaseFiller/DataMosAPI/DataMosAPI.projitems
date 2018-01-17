@@ -9,6 +9,20 @@
     <Import_RootNamespace>DataMosAPI</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CategoryList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataSetVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataSetPublisher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataSetPublisherList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataSet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeoData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Phone.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EmailBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WorkHours.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Cell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GeneralCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlaceStrings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PlaceStringsEvent.cs" />
   </ItemGroup>
 </Project>

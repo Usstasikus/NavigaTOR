@@ -3,8 +3,6 @@ namespace DataMosAPI
 {
     public class EmailBox
     {
-        public EmailBox()
-        {
-        }
+        public String[] Email { get; set; }
     }
 }

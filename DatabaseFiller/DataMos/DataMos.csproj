@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Database" Version="1.0.2" />
+  </ItemGroup>
+  <Import Project="..\DataMosAPI\DataMosAPI.projitems" Label="Shared" Condition="Exists('..\DataMosAPI\DataMosAPI.projitems')" />
 </Project>

@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace DataMosAPI
-{
+{   
     public class CategoryList
     {
-        public CategoryList()
-        {
-        }
+        public List<Category> Items { get; set; }
+        public int Count { get; set; }
     }
 }

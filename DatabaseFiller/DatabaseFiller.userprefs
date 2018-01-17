@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{8921B444-84EF-4FB9-9101-73AA8C5E6938}|Default">
+  <MonoDevelop.Ide.ItemProperties.DataMos PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataMosAPI/DataSetPublisherList.cs">
+    <Files>
+      <File FileName="DataMosAPI/Category.cs" Line="27" Column="6" />
+      <File FileName="DataMos/Program.cs" Line="351" Column="96" />
+      <File FileName="DataMosAPI/PlaceStringsEvent.cs" Line="5" Column="6" />
+      <File FileName="DataMosAPI/GeneralCell.cs" Line="48" Column="27" />
+      <File FileName="DataMosAPI/WorkHours.cs" Line="12" Column="10" />
+      <File FileName="DataMosAPI/GeoData.cs" Line="16" Column="17" />
+      <File FileName="DataMosAPI/CategoryList.cs" Line="8" Column="26" />
+      <File FileName="DataMosAPI/DataSetPublisherList.cs" Line="8" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Forsquare PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

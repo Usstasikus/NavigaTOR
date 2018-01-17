@@ -1,10 +1,9 @@
 ﻿using System;
 namespace DataMosAPI
 {
-    public class Phone
+    public class Phone<T>
     {
-        public Phone()
-        {
-        }
+        public T PublicPhone { get; set; }
     }
+
 }

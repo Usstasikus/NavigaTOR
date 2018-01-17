@@ -3,8 +3,8 @@ namespace DataMosAPI
 {
     public class PlaceStringsEvent
     {
-        public PlaceStringsEvent()
-        {
-        }
+        public int global_id { get; set; }
+        public int Number { get; set; }
+        public EventCell Cells { get; set; }
     }
 }
