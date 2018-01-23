@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{8921B444-84EF-4FB9-9101-73AA8C5E6938}|Default">
   <MonoDevelop.Ide.ItemProperties.DataMos PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DataMosAPI/DataSetPublisherList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataMos/Program.cs">
     <Files>
       <File FileName="DataMosAPI/Category.cs" Line="27" Column="6" />
       <File FileName="DataMos/Program.cs" Line="351" Column="96" />
