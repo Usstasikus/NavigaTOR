@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Database
 {
     [Browsable(false)]
-    public partial class navigatordbContext : DbContext
+    public partial class navigatordbContext : IdentityDbContext
     {
         public static IConfigurationRoot Configuration { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }

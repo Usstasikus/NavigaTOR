@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "121e3d12b9135c1e5a2870e5ae38ffc9c16d77e1"
+    "signature": "ca5bd08ed4e586f0522c694b7c0794cb68946310"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,12 +13,14 @@
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.Extensions.Configuration": "2.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.0.0",
-          "Microsoft.Extensions.Configuration.Json": "2.0.0"
+          "Microsoft.Extensions.Configuration.Json": "2.0.0",
+          "docfx.console": "2.30.0"
         },
         "runtime": {
           "Database.dll": {}
         }
       },
+      "docfx.console/2.30.0": {},
       "Microsoft.CSharp/4.4.0": {},
       "Microsoft.EntityFrameworkCore/2.0.0": {
         "dependencies": {
@@ -764,6 +766,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "docfx.console/2.30.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-40vm8mc1FXa5OjW0gAUyE0NqMvyxXLWSytIAk6OXoeZTxP3xWwj/iUZscor5KnPGurG3ZOkcJTJ6X6GLTFFvPA==",
+      "path": "docfx.console/2.30.0",
+      "hashPath": "docfx.console.2.30.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.0": {
       "type": "package",

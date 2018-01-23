@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace Database
 {
     /// <summary>
     /// Class for User entity
     /// </summary>
-    public partial class User
+    public partial class User : IdentityUser
     {
         /// <summary>
         /// Default constructor
