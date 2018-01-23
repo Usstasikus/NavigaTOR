@@ -1,0 +1,11 @@
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.csprojResolveAssemblyReference.cache
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.csproj.CoreCompileInputs.cache
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.AssemblyInfoInputs.cache
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.AssemblyInfo.cs
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/bin/Debug/netcoreapp2.0/DataMos.deps.json
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/bin/Debug/netcoreapp2.0/DataMos.runtimeconfig.json
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/bin/Debug/netcoreapp2.0/DataMos.runtimeconfig.dev.json
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/bin/Debug/netcoreapp2.0/DataMos.dll
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/bin/Debug/netcoreapp2.0/DataMos.pdb
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.dll
+/Users/StasDon/GitHub/NavigaTOR/DatabaseFiller/DataMos/obj/Debug/netcoreapp2.0/DataMos.pdb

@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{59A2508B-ACE8-4155-BD80-73760A69AB37}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Database/DB_API.cs">
+    <Files>
+      <File FileName="Database/DB_API.cs" Line="13" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DatabaseTest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
